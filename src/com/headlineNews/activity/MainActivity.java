@@ -98,6 +98,8 @@ public class MainActivity extends FragmentActivity {
 		initSlidingMenu();
 
 		initListener();
+		
+		
 	}
 
 	private void initListener() {
