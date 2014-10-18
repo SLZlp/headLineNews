@@ -6,6 +6,30 @@
     <item name="abc_search_url_text_selected" type="color">@*android:color/black</item>
     <item name="abc_search_url_text_pressed" type="color">@*android:color/black</item>
 
+    <color name="mine_bg">#ffebebeb</color>
+    <color name="mine_bg_night">#ff303030</color>
+    <color name="mine_item_bg_normal">#fffafafa</color>
+    <color name="mine_item_bg_normal_night">#ff252525</color>
+    <color name="mine_item_bg_pressed">#ffeeeeee</color>
+    <color name="mine_item_bg_pressed_night">#ff303030</color>
+    <color name="mine_login_hint_text">#fffafafa</color>
+    <color name="mine_item_text">#ff464646</color>
+    <color name="mine_item_text_night">#ff707070</color>
+    <color name="mine_count_bg">#fffe3232</color>
+    <color name="mine_count_bg_night">#ff935656</color>
+    <color name="mine_count_text">#ff464646</color>
+    <color name="mine_count_text_night">#ff707070</color>
+    <color name="mine_hint_text">#ff999999</color>
+    <color name="mine_hint_text_night">#ff707070</color>
+    <color name="mine_desc_text">#ff747474</color>
+    <color name="mine_desc_text_night">#ff707070</color>
+    <color name="mine_item_line">#ffdddddd</color>
+    <color name="mine_item_line_night">#ff363636</color>
+    <color name="mine_tab_text">#ff999999</color>
+    <color name="mine_tab_text_night">#ff707070</color>
+    <color name="mine_extention_icon_filter">#ff935656</color>
+    
+    
     <color name="gallery_background">#ff111111</color>
     <color name="gallery_alpha">#b0000000</color>
     <color name="white">#ffffffff</color>

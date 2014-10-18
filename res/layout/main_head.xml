@@ -20,7 +20,7 @@
         android:paddingRight="10.0dip" >
 
         <ImageView
-            android:id="@+id/top_head"
+            android:id="@+id/head_munu"
             android:layout_width="@dimen/head_size"
             android:layout_height="@dimen/head_size"
             android:layout_gravity="center_vertical"
@@ -44,7 +44,7 @@
         android:visibility="gone" />
 
     <ImageView
-        android:id="@+id/top_more"
+        android:id="@+id/head_more"
         android:layout_width="wrap_content"
         android:layout_height="fill_parent"
         android:layout_alignParentRight="true"
@@ -100,7 +100,7 @@
         </FrameLayout>
 
         <ImageView
-            android:id="@+id/top_refresh"
+            android:id="@+id/head_refresh"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
@@ -110,7 +110,7 @@
             android:src="@drawable/refreshicon_titlebar" />
 
         <ProgressBar
-            android:id="@+id/top_progress"
+            android:id="@+id/head_progress"
             style="?android:attr/progressBarStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
