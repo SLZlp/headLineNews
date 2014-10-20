@@ -14,6 +14,11 @@ import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
 import com.nostra13.universalimageloader.utils.StorageUtils;
 
+/**
+ * 这一块能看懂多少就看懂多少吧  用的是别人的第三方包
+ * @author susan
+ *
+ */
 public class AppApplication extends Application {
 	private static AppApplication mAppApplication;
 	private SQLHelper sqlHelper;

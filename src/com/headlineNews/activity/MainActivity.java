@@ -34,15 +34,14 @@ import com.headlineNews.widget.ColumnHorizontalScrollView;
 import com.headlineNews.widget.DrawerView;
 
 /**
- * 
+ * 本应用的主体
  * @author jack
- * 
+ *  FragmentActivity 是 android.support.v4.app.FragmentActivity包下面的
  */
 public class MainActivity extends FragmentActivity {
 
 	/** 上下文 */
 	private Context mContext;
-
 	/** 头部 的中间的loading */
 	private ProgressBar head_progress;
 	/** 头部 中间的刷新按钮 */
@@ -81,7 +80,7 @@ public class MainActivity extends FragmentActivity {
 	/** 频道选项的 宽度 */
 	private int channelItemWidth = 60;
 
-	/***/
+	/**fragment 集合**/
 	private ArrayList<Fragment> fragments = new ArrayList<Fragment>();
 	/** 请求CODE */
 	public final static int CHANNELREQUEST = 1;
@@ -92,8 +91,10 @@ public class MainActivity extends FragmentActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
-
+		
+		//获取屏幕的宽度
 		initBase();
+		//初始化视图
 		initView();
 		initSlidingMenu();
 
@@ -135,11 +136,11 @@ public class MainActivity extends FragmentActivity {
 	 * 初始化视图
 	 */
 	private void initView() {
+		
 		head_progress = (ProgressBar) findViewById(R.id.head_progress);
 		head_refresh = (ImageView) findViewById(R.id.head_refresh);
 		head_munu = (ImageView) findViewById(R.id.head_munu);
 		head_more = (ImageView) findViewById(R.id.head_more);
-
 		rl_column = (RelativeLayout) findViewById(R.id.rl_column);
 		mColumnHorizontalScrollView = (ColumnHorizontalScrollView) findViewById(R.id.mColumnHorizontalScrollView);
 		mRadioGroup_content = (LinearLayout) findViewById(R.id.mRadioGroup_content);
@@ -167,10 +168,12 @@ public class MainActivity extends FragmentActivity {
 				AppApplication.getApp().getSQLHelper()).getUserChannel());
 	}
 
+	
 	/**
 	 * 初始化Column栏目项
 	 * */
 	private void initTabColumn() {
+		//移除线性布局中所有试图
 		mRadioGroup_content.removeAllViews();
 		int count = userChannelList.size();
 		mColumnHorizontalScrollView.setParam(this, mScreenWidth,

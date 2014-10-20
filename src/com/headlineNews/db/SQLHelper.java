@@ -4,9 +4,13 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+/**
+ * 要往手机自带的 数据库里面  写数据 （存放频道）通过 SQLHelper extends SQLiteOpenHelper 创建一张名为"channel"的数据库表 
+ * @author susan
+ */
 public class SQLHelper extends SQLiteOpenHelper {
 	public static final String DB_NAME = "news.db";// 数据库名称
-	public static final int VERSION = 1;
+	public static final int VERSION = 1;//版本号
 	
 	public static final String TABLE_CHANNEL = "channel";//数据库表
 
@@ -15,6 +19,7 @@ public class SQLHelper extends SQLiteOpenHelper {
 	public static final String ORDERID = "COrderId";
 	public static final String SELECTED = "CSelected";
 	private Context context;
+	
 	public SQLHelper(Context context) {
 		super(context, DB_NAME, null, VERSION);
 		this.context = context;

@@ -11,7 +11,8 @@ import com.headlineNews.dao.ChannelDao;
 import com.headlineNews.db.SQLHelper;
 
 public class ChannelManage {
-
+	
+	//把Channel 写成静态的  我们就不用在new了
 	public static ChannelManage channelManage;
 	/**
 	 * 默认的用户选择频道列表
@@ -24,6 +25,7 @@ public class ChannelManage {
 	private ChannelDao channelDao;
 	/** 判断数据库中是否存在用户数据 */
 	private boolean userExist = false;
+	
 	static {
 		defaultUserChannels = new ArrayList<Channel>();
 		defaultOtherChannels = new ArrayList<Channel>();
@@ -48,10 +50,15 @@ public class ChannelManage {
 		defaultUserChannels.add(new Channel(19, "娱乐", 12, 0));
 	}
 
+	/**
+	 * 有参构造 是个无返回值的
+	 */
 	private ChannelManage(SQLHelper paramDBHelper) throws SQLException {
+		//当channelDao 为空时 我就 让它new出来
 		if (channelDao == null)
 			channelDao = new ChannelDao(paramDBHelper.getContext());
-		// NavigateItemDao(paramDBHelper.getDao(NavigateItem.class));
+		// NavigateItemDao(paramDBHelper.getDao(NavigateItem.class))
+		
 		return;
 	}
 
@@ -73,7 +80,7 @@ public class ChannelManage {
 		channelDao.clearFeedTable();
 	}
 	/**
-	 * 获取其他的频道
+	 * 获取默认的频道
 	 * @return 数据库存在用户配置 ? 数据库内的用户选择频道 : 默认用户选择频道 ;
 	 */
 	public List<Channel> getUserChannel() {
@@ -84,7 +91,7 @@ public class ChannelManage {
 			int count = maplist.size();
 			List<Channel> list = new ArrayList<Channel>();
 			for (int i = 0; i < count; i++) {
-				Channel navigate = new Channel();
+				Channel navigate = new Channel(); //navigate 导航
 				navigate.CId = Integer.valueOf(maplist.get(i).get(SQLHelper.ID));
 				navigate.CName = maplist.get(i).get(SQLHelper.NAME);
 				navigate.COrderId = Integer.valueOf(maplist.get(i).get(SQLHelper.ORDERID));

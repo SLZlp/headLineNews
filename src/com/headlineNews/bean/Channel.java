@@ -21,10 +21,7 @@ public class Channel implements Parcelable{
 	 * 频道是否选中
 	 *  */
 	public Integer CSelected;
-	/**
-	 * 无参构造
-	 */
-
+	
 	public static final Parcelable.Creator<Channel> CREATOR = new Creator<Channel>() {
 		
 		@Override
@@ -42,7 +39,12 @@ public class Channel implements Parcelable{
 			return channel;
 		}
 	};
+	
+	/**
+	 * 无参构造
+	 */
 	public Channel() {
+		
 	}
 	/**
 	 * 有参构造
@@ -64,10 +66,12 @@ public class Channel implements Parcelable{
 		return "Channel [CId=" + CId + ", CName=" + CName + ", COrderId="
 				+ COrderId + ", CSelected=" + CSelected + "]";
 	}
+	
 	@Override
 	public int describeContents() {
 		return 0;
 	}
+	
 	@Override
 	public void writeToParcel(Parcel parcel, int flags) {
 		parcel.writeInt(CId);
@@ -75,5 +79,7 @@ public class Channel implements Parcelable{
 		parcel.writeInt(COrderId);
 		parcel.writeInt(CSelected);
 	}
+	
+	
 	
 }
