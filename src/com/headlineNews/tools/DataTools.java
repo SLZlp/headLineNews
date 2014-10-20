@@ -12,7 +12,7 @@ public class DataTools {
 	}
 
 	/**
-	 *  px תΪ dip
+	 *  px转dip
 	 */
 	public static int px2dip(Context context, float pxValue) {
 		final float scale = context.getResources().getDisplayMetrics().density;
