@@ -13,17 +13,28 @@ import android.database.sqlite.SQLiteDatabase;
 import com.headlineNews.bean.Channel;
 import com.headlineNews.db.SQLHelper;
 
+ /**
+  * 通过道  对数据库中的TABLE_CHANNEL = "channel"数据库表 进行具体的操作
+  * @author susan
+  *
+  */
 public class ChannelDao implements IChannelDao{
 	private SQLHelper helper = null;
 
+	/**
+	 * 通过道  对数据库中的TABLE_CHANNEL = "channel"数据库表 进行具体的操作
+	 * @param context
+	 */
 	public ChannelDao(Context context) {
 		helper = new SQLHelper(context);
 	}
 
 	@Override
 	public boolean addCache(Channel item) {
-		// TODO Auto-generated method stub
-		boolean flag = false;
+		/**
+		 * 返回 true 往数据库插入成功，反之者反
+		 */
+		boolean flag = false;  
 		SQLiteDatabase database = null;
 		long id = -1;
 		try {
@@ -164,7 +175,7 @@ public class ChannelDao implements IChannelDao{
 		String sql = "update sqlite_sequence set seq=0 where CName='"
 				+ SQLHelper.TABLE_CHANNEL + "'";
 		SQLiteDatabase db = helper.getWritableDatabase();
-		db.execSQL(sql);
+		///db.execSQL(sql);  susan
 	}
 
 }

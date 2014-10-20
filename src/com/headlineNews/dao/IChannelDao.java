@@ -7,21 +7,27 @@ import android.content.ContentValues;
 
 import com.headlineNews.bean.Channel;
 
+/**
+ * 对频道进行操作的接口
+ * @author susan
+ *
+ */
 public interface IChannelDao {
-	/**添加把频道添加到缓存*/
+	/**添加把频道添加到数据库*/
 	public boolean addCache(Channel item);
 
-	/**删除缓存*/
+	/**删除数据库*/
 	public boolean deleteCache(String whereClause, String[] whereArgs);
-	/**更新缓存*/
+	/**更新数据库*/
 	public boolean updateCache(ContentValues values, String whereClause,
 			String[] whereArgs);
-	/**返回缓存内容*/
+	/**返回数据库内容*/
 	public Map<String, String> viewCache(String selection,
 			String[] selectionArgs);
-	/**返回缓存内容集合*/
+	/**返回数据库内容集合*/
 	public List<Map<String, String>> listCache(String selection,
 			String[] selectionArgs);
-	/***/
+	
+	/**删除表**/
 	public void clearFeedTable();
 }
