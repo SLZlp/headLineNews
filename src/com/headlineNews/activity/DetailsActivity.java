@@ -1,7 +1,7 @@
 package com.headlineNews.activity;
 
 import java.util.ArrayList;
-
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -19,7 +19,6 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout.LayoutParams;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-
 import com.headlineNews.R;
 import com.headlineNews.baseActivity.BaseActivity;
 import com.headlineNews.bean.News;
@@ -51,6 +50,8 @@ public class DetailsActivity extends BaseActivity {
 
 	/* 获取传递过来的数据 */
 	private void getData() {
+		System.out.println("*******************" +getIntent().getSerializableExtra("news") );
+		
 		news = (News) getIntent().getSerializableExtra("news");
 		news_url = news.getSource_url();
 		news_title = news.getTitle();
@@ -59,6 +60,7 @@ public class DetailsActivity extends BaseActivity {
 				.getPublishTime()));
 	}
 
+	@SuppressLint("JavascriptInterface")
 	private void initWebView() {
 		webView = (WebView) findViewById(R.id.wb_details);
 		LayoutParams params = new LayoutParams(LayoutParams.MATCH_PARENT,
@@ -69,9 +71,9 @@ public class DetailsActivity extends BaseActivity {
 			// settings.setTextZoom(120);//Sets the text zoom of the page in
 			// percent. The default is 100.
 			settings.setLayoutAlgorithm(LayoutAlgorithm.SINGLE_COLUMN);
-			// settings.setUseWideViewPort(true); //打开页面时， 自适应屏幕
+			settings.setUseWideViewPort(true); //打开页面时， 自适应屏幕
 			// settings.setLoadWithOverviewMode(true);//打开页面时， 自适应屏幕
-			settings.setSupportZoom(false);// 用于设置webview放大
+			settings.setSupportZoom(true);// 用于设置webview放大
 			settings.setBuiltInZoomControls(false);
 			webView.setBackgroundResource(R.color.transparent);
 			// 添加js交互接口类，并起别名 imagelistner
@@ -149,6 +151,7 @@ public class DetailsActivity extends BaseActivity {
 				imgsUrl.add(s);
 				Log.i("图片的URL>>>>>>>>>>>>>>>>>>>>>>>", s);
 			}
+			//加载到图片 然后就 跳转 ImageShowActivity  
 			Intent intent = new Intent();
 			intent.putStringArrayListExtra("infos", imgsUrl);
 			intent.setClass(context, ImageShowActivity.class);
@@ -161,7 +164,8 @@ public class DetailsActivity extends BaseActivity {
 	private class MyWebViewClient extends WebViewClient {
 		@Override
 		public boolean shouldOverrideUrlLoading(WebView view, String url) {
-			return super.shouldOverrideUrlLoading(view, url);
+			webView.loadUrl(url);
+			return false;
 		}
 
 		@Override
@@ -189,6 +193,7 @@ public class DetailsActivity extends BaseActivity {
 	}
 
 	private class MyWebChromeClient extends WebChromeClient {
+		
 		@Override
 		public void onProgressChanged(WebView view, int newProgress) {
 			// TODO Auto-generated method stub
@@ -197,5 +202,7 @@ public class DetailsActivity extends BaseActivity {
 			}
 			super.onProgressChanged(view, newProgress);
 		}
+		
+	
 	}
 }

@@ -1,22 +1,28 @@
 package com.headlineNews.widget;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.RelativeLayout;
 
 import com.headlineNews.R;
+import com.headlineNews.activity.SettingActivity;
 import com.headlineNews.slidingmenu.lib.SlidingMenu;
 import com.headlineNews.slidingmenu.lib.SlidingMenu.OnClosedListener;
 
 /**
  * 自定义SlidingMenu 测拉菜单类
  * 
- * @author jake
+ * @author susan
  * 
  */
 public class DrawerView implements OnClickListener {
 	private Activity activity;
 	private SlidingMenu localSlidingMenu;
+    /**相对布局 设置 页面**/
+	private RelativeLayout setting_btn;
+
 
 	public DrawerView(Activity activity) {
 		super();
@@ -54,13 +60,37 @@ public class DrawerView implements OnClickListener {
 
 			}
 		});
-		// initView();
+		 initView();
 		return localSlidingMenu;
+	}
+
+	private void initView() {
+		/**找到 设置 控件 **/
+		setting_btn = (RelativeLayout) localSlidingMenu.findViewById(R.id.setting_btn);
+		
 	}
 
 	@Override
 	public void onClick(View v) {
+		switch (v.getId()) {
+		case 0:
+			
+			break;
+		case 1:
+			
+			break;
+			/**跳转到 设置页面**/
+		case R.id.setting_btn:
+			activity.startActivity(new Intent(activity,SettingActivity.class));
+			activity.overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+			break;
+
+		default:
+			break;
+		}
 
 	}
 
+	
+	
 }

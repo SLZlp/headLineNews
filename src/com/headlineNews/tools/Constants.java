@@ -16,25 +16,42 @@ public class Constants {
 		for(int i =0 ; i < 10 ; i++){
 			News news = new News();
 			news.setId(i);
+			//新闻id
 			news.setNewsId(i);
+			/** 收藏状态  是：1， 否：0*/
 			news.setCollectStatus(0);
+			/** 评论数量 */
 			news.setCommentNum(i + 10);
+			/** 感兴趣状态   是：1， 否：0*/
 			news.setInterestedStatus(1);
+			/** 喜欢 状态   是：1， 否：0*/
 			news.setLikeStatus(1);
+			/** 阅读状态 ，读过的话显示灰色背景  度过：1， 未读：0 */
 			news.setReadStatus(0);
+			/** 新闻类型 */
 			news.setNewsCategory("推荐");
+			/** 新闻类别 ID */
 			news.setNewsCategoryId(1);
-			news.setSource_url("http://news.sina.com.cn/c/2014-05-05/134230063386.shtml");
-			news.setTitle("可以用谷歌眼镜做的10件酷事：导航、玩游戏");
+			
+			//news.setSource_url("http://news.sina.com.cn/c/2014-05-05/134230063386.shtml");
+			news.setSource_url("http://tech.sina.com.cn/zl/post");
+			//http://photo.sina.com.cn/
+			news.setTitle("移动互联网UGC领域创业的模式与机会");
 			List<String> url_list = new ArrayList<String>();
 			if(i%2 == 1){
-				String url1 = "http://infopic.gtimg.com/qq_news/digi/pics/102/102066/102066094_400_640.jpg";
-				String url2 = "http://infopic.gtimg.com/qq_news/digi/pics/102/102066/102066096_400_640.jpg";
-				String url3 = "http://infopic.gtimg.com/qq_news/digi/pics/102/102066/102066099_400_640.jpg";
+				//改动过的
+				String url1 = "http://www.sinaimg.cn/dy/slidenews/4_img/2014_43/704_1451712_631726.jpg";
+				String url2 = "http://www.sinaimg.cn/dy/slidenews/4_img/2014_43/704_1451713_887067.jpg";
+				String url3 = "http://www.sinaimg.cn/dy/slidenews/4_img/2014_43/704_1451714_449684.jpg";
+				
+				//String url3 = "http://infopic.gtimg.com/qq_news/digi/pics/102/102066/102066099_400_640.jpg";
 				news.setPicOne(url1);
 				news.setPicTwo(url2);
 				news.setPicThr(url3);
-				news.setSource_url("http://tech.sina.com.cn/zl/post/detail/i/2013-11-06/pid_8436571.htm?from=groupmessage&isappinstalled=0");
+				//news.setSource_url("http://www.sinaimg.cn/dy/slidenews/3_img/2014_43/63229_334659_518640.jpg");
+				//news.setSource_url("http://tech.sina.com.cn/zl/post/detail/i/2013-11-06/pid_8436571.htm?from=groupmessage&isappinstalled=0");
+				
+				news.setSource_url("http://photo.sina.com.cn/");
 				url_list.add(url1);
 				url_list.add(url2);
 				url_list.add(url3);
@@ -54,8 +71,9 @@ public class Constants {
 				news.setTitle("部落战争强势回归");
 				news.setLocal("推广");
 				news.setIsLarge(1);
-				String url = "http://imgt2.bdstatic.com/it/u=3269155243,2604389213&fm=21&gp=0.jpg";
-				news.setSource_url("http://games.sina.com.cn/zl/duanpian/2014-05-21/141297.shtml");
+				//String url = "http://imgt2.bdstatic.com/it/u=3269155243,2604389213&fm=21&gp=0.jpg";
+				String url = "http://www.sinaimg.cn/dy/slidenews/3_img/2014_43/63229_334659_518640.jpg";
+				news.setSource_url("http://slide.eladies.sina.com.cn/news/slide_3_63229_23497.html#p=1");
 				news.setPicOne(url);
 				url_list.clear();
 				url_list.add(url);
@@ -89,7 +107,7 @@ public class Constants {
 	/** mark=4 ：收藏 */
 	public final static int mark_favor = 4;
 	
-	/*
+	/**
 	 * 获取城市列表
 	 */
 	public static ArrayList<CityEntity> getCityList(){

@@ -13,6 +13,7 @@ import android.widget.ListView;
  *
  */
 public class HeadListView extends ListView {
+	
 	public interface HeaderAdapter {
 		public static final int HEADER_GONE = 0;
 		public static final int HEADER_VISIBLE = 1;
@@ -124,4 +125,7 @@ public class HeadListView extends ListView {
 			drawChild(canvas, mHeaderView, getDrawingTime());
 		}
 	}
+	
+	
+	
 }

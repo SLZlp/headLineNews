@@ -19,6 +19,7 @@ import android.view.MotionEvent;
 import android.view.ScaleGestureDetector;
 import android.view.View;
 import android.widget.ImageView;
+
 /**
  * 点击放大的ImageView
  */
@@ -27,6 +28,7 @@ public class TouchImageView extends ImageView {
 
 	// private static final String TAG = "Touch";
 	// These matrices will be used to move and zoom image
+	//matrix 矩阵 图片缩放的矩阵
 	Matrix matrix = new Matrix();
 	Matrix savedMatrix = new Matrix();
 
@@ -40,7 +42,7 @@ public class TouchImageView extends ImageView {
 	static final int CLICK = 10;
 	int mode = NONE;
 
-	float redundantXSpace, redundantYSpace;
+	float redundantXSpace, redundantYSpace;  //redundant  多余的，累赘的;（因人员过剩）被解雇的，失业的;重沓;衍
 	float right, bottom, origWidth, origHeight, bmWidth, bmHeight;
 	float width, height;
 	PointF last = new PointF();
@@ -98,10 +100,10 @@ public class TouchImageView extends ImageView {
 
 	protected void init() {
 		mTimerHandler = new TimeHandler(this);
-		matrix.setTranslate(1f, 1f);
+		matrix.setTranslate(1f, 1f);//设置转化
 		m = new float[9];
 		setImageMatrix(matrix);
-		setScaleType(ScaleType.MATRIX);
+		setScaleType(ScaleType.MATRIX);//设置imageView的缩放类型
 		if (Build.VERSION.SDK_INT >= 8) {
 			mScaleDetector = new ScaleGestureDetector(mContext,
 					new ScaleListener());
@@ -516,6 +518,10 @@ public class TouchImageView extends ImageView {
 	}
 
 	static class TimeHandler extends Handler {
+		
+		/**
+		 * WeakReference 是弱引用，其中保存的对象实例可以被GC回收掉
+		 */
 		private final WeakReference<TouchImageView> mService;
 
 		TimeHandler(TouchImageView view) {

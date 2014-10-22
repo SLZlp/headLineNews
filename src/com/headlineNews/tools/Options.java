@@ -6,6 +6,11 @@ import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.assist.ImageScaleType;
 import com.nostra13.universalimageloader.core.display.FadeInBitmapDisplayer;
 
+/**
+ *加载 新闻 图片配置
+ * @author Administrator
+ *
+ */
 public class Options {
 	/** 新闻列表中用到的图片加载配置 */
 	public static DisplayImageOptions getListOptions() {

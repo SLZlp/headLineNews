@@ -13,6 +13,7 @@ import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.util.DisplayMetrics;
 import android.view.Display;
 import android.view.Gravity;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
@@ -99,30 +100,76 @@ public class MainActivity extends FragmentActivity {
 		initSlidingMenu();
 
 		initListener();
-		
-		
+
 	}
 
 	private void initListener() {
+		
+		/**
+		 * 跳转到更多频道的 按钮
+		 */
 		button_more_columns.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
+				Intent intent_channel = new Intent(getApplicationContext(),
+						ChannelManageActivity.class);
+				startActivityForResult(intent_channel, CHANNELREQUEST);
+				overridePendingTransition(R.anim.slide_in_right,
+						R.anim.slide_out_left);
 
 			}
 		});
+		
+		/**
+		 * 就是头部左边上面那个有个头像的图片 点一下  就跳到slidingmemu 
+		 */
+		head_munu.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				if (side_drawer.isMenuShowing()) {
+					side_drawer.showContent();
+				} else {
+					side_drawer.showMenu();
+				}
+			}
+		});
+		
+		
+		//这个先别做
+		/*head_more.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				if (side_drawer.isSecondaryMenuShowing()) {
+					side_drawer.showContent();
+				} else {
+					side_drawer.showSecondaryMenu();
+				}
+			}
+		});*/
+		
 	}
 
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-		super.onActivityResult(requestCode, resultCode, data);
+		
+		/**
+		 * 这里其实 也是写死了的  滑动的时候 当回应码等于 10 的 时候 就重新setChangelView();
+		 */
 		switch (requestCode) {
 		case CHANNELREQUEST:
 			if (resultCode == CHANNELRESULT) {
-
+				setChangelView();
 			}
 			break;
 		}
+		
+		super.onActivityResult(requestCode, resultCode, data);
+		
 	}
 
 	/**
@@ -284,6 +331,31 @@ public class MainActivity extends FragmentActivity {
 		}
 	}
 
+	private long mExitTime;
+
+	@Override
+	public boolean onKeyDown(int keyCode, KeyEvent event) {
+		// TODO Auto-generated method stub
+		if (keyCode == KeyEvent.KEYCODE_BACK) {
+			if (side_drawer.isMenuShowing()
+					|| side_drawer.isSecondaryMenuShowing()) {
+				side_drawer.showContent();
+			} else {
+				if ((System.currentTimeMillis() - mExitTime) > 2000) {
+					Toast.makeText(this, "在按一次退出", Toast.LENGTH_SHORT).show();
+					mExitTime = System.currentTimeMillis();
+				} else {
+					finish();
+				}
+			}
+			return true;
+		}
+		// 拦截MENU按钮点击事件，让他无任何操作
+		if (keyCode == KeyEvent.KEYCODE_MENU) {
+			return true;
+		}
+		return super.onKeyDown(keyCode, event);
+	}
 	/**
 	 * ViewPager切换监听方法
 	 * */
