@@ -75,6 +75,9 @@ public class ImagePagerAdapter extends PagerAdapter {
 		progress_text.setText(String.valueOf(position));
 		imageLoader.displayImage(imgsUrl.get(position), full_image, options,new ImageLoadingListener() {
 			
+			/**
+			 * 开始加载
+			 */
 			@Override
 			public void onLoadingStarted(String imageUri, View view) {
 				// TODO Auto-generated method stub
@@ -84,6 +87,9 @@ public class ImagePagerAdapter extends PagerAdapter {
 				retry.setVisibility(View.GONE);
 			}
 			
+			/**
+			 * 加载失败
+			 */
 			@Override
 			public void onLoadingFailed(String imageUri, View view,
 					FailReason failReason) {
@@ -94,6 +100,9 @@ public class ImagePagerAdapter extends PagerAdapter {
 				retry.setVisibility(View.VISIBLE);
 			}
 			
+			/**
+			 * 加载完成
+			 */
 			@Override
 			public void onLoadingComplete(String imageUri, View view, Bitmap loadedImage) {
 				progress.setVisibility(View.GONE);
@@ -102,6 +111,9 @@ public class ImagePagerAdapter extends PagerAdapter {
 				retry.setVisibility(View.GONE);
 			}
 			
+			/**
+			 * 取消加载
+			 */
 			@Override
 			public void onLoadingCancelled(String imageUri, View view) {
 				progress.setVisibility(View.GONE);

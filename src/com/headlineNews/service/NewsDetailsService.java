@@ -7,6 +7,11 @@ import org.jsoup.nodes.Element;
 
 import android.text.TextUtils;
 
+/**
+ * 通过你穿过的url，news_title, news_date 创建一个html
+ * @author susan
+ *
+ */
 public class NewsDetailsService {
 	public static String getNewsDetails(String url, String news_title,
 			String news_date) {

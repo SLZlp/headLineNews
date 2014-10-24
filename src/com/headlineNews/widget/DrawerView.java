@@ -1,22 +1,32 @@
 package com.headlineNews.widget;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.RelativeLayout;
 
 import com.headlineNews.R;
+import com.headlineNews.activity.SearchActivity;
+import com.headlineNews.activity.SettingActivity;
 import com.headlineNews.slidingmenu.lib.SlidingMenu;
 import com.headlineNews.slidingmenu.lib.SlidingMenu.OnClosedListener;
 
 /**
  * 自定义SlidingMenu 测拉菜单类
  * 
- * @author jake
+ * @author susan
  * 
  */
 public class DrawerView implements OnClickListener {
 	private Activity activity;
 	private SlidingMenu localSlidingMenu;
+	
+	/**相对布局 搜索 页面**/
+	private RelativeLayout search_btn;
+    /**相对布局 设置 页面**/
+	private RelativeLayout setting_btn;
+
 
 	public DrawerView(Activity activity) {
 		super();
@@ -41,7 +51,7 @@ public class DrawerView implements OnClickListener {
 		// localSlidingMenu.setBehindWidthRes(R.dimen.left_drawer_avatar_size);//设置SlidingMenu菜单的宽度
 		localSlidingMenu.setMenu(R.layout.left_drawer_fragment);// 设置menu的布局文件
 		//localSlidingMenu.toggle();// 动态判断自动关闭或开启SlidingMenu
-		localSlidingMenu
+		/*localSlidingMenu
 				.setOnOpenedListener(new SlidingMenu.OnOpenedListener() {
 					public void onOpened() {
 
@@ -53,14 +63,58 @@ public class DrawerView implements OnClickListener {
 			public void onClosed() {
 
 			}
-		});
-		// initView();
+		});*/
+		
+		 initView();
+		 initListener();
 		return localSlidingMenu;
 	}
 
+	
+
+	private void initView() {
+		/**找到  搜索 控件**/
+		search_btn = (RelativeLayout) localSlidingMenu.findViewById(R.id.search_btn);
+		/**找到 设置 控件 **/
+		setting_btn = (RelativeLayout) localSlidingMenu.findViewById(R.id.setting_btn);
+		
+	}
+	
+	private void initListener() {
+		/**搜索 点击事件**/
+		search_btn.setOnClickListener(this);
+		/** 设置 点击事件**/
+		setting_btn.setOnClickListener(this);
+		
+		
+	}
+	
+	
+	
+	
 	@Override
 	public void onClick(View v) {
+		switch (v.getId()) {
+		case R.id.search_btn:
+			/** 跳转到 搜索 设置页面 **/
+			activity.startActivity(new Intent(activity,SearchActivity.class));
+			activity.overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+			break;
+		case 1:
+			
+			break;
+			/**跳转到 设置页面**/
+		case R.id.setting_btn:
+			activity.startActivity(new Intent(activity,SettingActivity.class));
+			activity.overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+			break;
+
+		default:
+			break;
+		}
 
 	}
 
+	
+	
 }

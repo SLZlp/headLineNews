@@ -2,6 +2,11 @@ package com.headlineNews.widget.imageshow;
 
 import android.view.MotionEvent;
 
+/**
+ *  设置 触摸事件  得到 滑动屏幕的坐标
+ * @author susan
+ *
+ */
 public class WrapMotionEvent {
 	protected MotionEvent event;
 

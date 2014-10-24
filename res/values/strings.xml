@@ -58,5 +58,6 @@
     <string name="city_category_list_hint">选择城市，立即查看本地新闻</string>
     <string name="city_category_list_notify_no_city">请先选择您关注的城市</string>
     <string name="retry_large_image"><u>加载失败，点击重试</u></string>
+    <string name="search_head_et">请输入关键字....</string>
 
 </resources>

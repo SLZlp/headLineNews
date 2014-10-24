@@ -153,7 +153,7 @@ public class ChannelDao implements IChannelDao{
 				}
 				list.add(map);
 			}
-
+			cursor.close();
 		} catch (Exception e) {
 			// TODO: handle exception
 		} finally {

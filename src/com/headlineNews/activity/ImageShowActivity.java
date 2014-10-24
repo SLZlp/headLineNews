@@ -12,8 +12,8 @@ import com.headlineNews.adapter.ImagePagerAdapter;
 import com.headlineNews.baseActivity.BaseActivity;
 import com.headlineNews.widget.imageshow.ImageShowViewPager;
 
-/*
- * 图片展示
+/**
+ * 图片显示的activity 
  */
 public class ImageShowActivity extends BaseActivity {
 	/** 图片展示 */

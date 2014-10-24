@@ -166,4 +166,5 @@ public class ChannelManage {
 		saveUserChannel(defaultUserChannels);
 		saveOtherChannel(defaultOtherChannels);
 	}
+	
 }

@@ -100,6 +100,7 @@ public class NewsFragment extends Fragment{
 	}
 
 	private void initData() {
+		//判断传过来的text title 加载具体的集合  3页面 其他加载默认的
 		newsList = Constants.getNewsList();
 	}
 	
@@ -130,6 +131,7 @@ public class NewsFragment extends Fragment{
 						Intent intent = new Intent(activity, DetailsActivity.class);
 						if(channel_id == Constants.CHANNEL_CITY){
 							if(position != 0){
+								//当跳DetailsActivity时，通过intent传值 
 								intent.putExtra("news", mAdapter.getItem(position - 1));
 								startActivity(intent);
 								activity.overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);

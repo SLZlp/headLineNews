@@ -1,11 +1,14 @@
 package com.headlineNews.bean;
 
+import java.io.Serializable;
 import java.util.List;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-
-public class News implements Parcelable{
+/**
+ * 新闻的实体  bean
+ * @author susan
+ *
+ */
+public class News implements Serializable{
 
 	/** 新闻类别 ID */
 	private Integer newsCategoryId;
@@ -201,75 +204,6 @@ public class News implements Parcelable{
 	public void setInterestedStatus(int interestedStatus) {
 		this.interestedStatus = interestedStatus;
 	}
-	@Override
-	public int describeContents() {
-		return 0;
-	}
-	@Override
-	public void writeToParcel(Parcel parcel, int flags) {
-		parcel.writeInt(newsCategoryId);
-		parcel.writeString(newsCategory);
-		parcel.writeInt(mark);
-		parcel.writeInt(commentNum);
-		parcel.writeInt(id);
-		parcel.writeInt(newsId);
-		parcel.writeString(title);
-		parcel.writeString(source);
-		parcel.writeString(source_url);
-		parcel.writeLong(publishTime);
-		parcel.writeString(summary);
-		parcel.writeString(newsAbstract);
-		parcel.writeString(comment);
-		parcel.writeString(local);
-		parcel.writeString(picListString);
-		parcel.writeString(picOne);
-		parcel.writeString(picTwo);
-		parcel.writeString(picThr);
-		parcel.writeList(picList);
-		parcel.writeInt(isLarge);
-		parcel.writeInt(readStatus);
-		parcel.writeInt(collectStatus);
-		parcel.writeInt(likeStatus);
-		parcel.writeInt(interestedStatus);
-	}
-	
-	public static final Parcelable.Creator<News> CREATOR = new Creator<News>() {
-		
-		@Override
-		public News[] newArray(int size) {
-			return new News[size];
-		}
-		
-		@Override
-		public News createFromParcel(Parcel source) {
-			News news = new News();
-			news.newsCategoryId = source.readInt();
-			news.newsCategory = source.readString();
-			news.mark = source.readInt();
-			news.commentNum = source.readInt();
-			news.id = source.readInt();
-			news.newsId = source.readInt();
-			news.title = source.readString();
-			news.source = source.readString();
-			news.source_url = source.readString();
-			news.publishTime = source.readLong();
-			news.summary = source.readString();
-			news.newsAbstract = source.readString();
-			news.comment = source.readString();
-			news.local = source.readString();
-			news.picListString = source.readString();
-			news.picOne = source.readString();
-			news.picTwo = source.readString();
-			news.picThr = source.readString();
-			ClassLoader loader = News.class.getClassLoader();
-			source.readList(news.picList, loader);
-			news.isLarge = source.readInt();
-			news.readStatus = source.readInt();
-			news.collectStatus = source.readInt();
-			news.likeStatus = source.readInt();
-			news.interestedStatus = source.readInt();
-			return news;
-		}
-	};
+
 	
 }
