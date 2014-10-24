@@ -31,7 +31,7 @@
         <activity android:name="com.headlineNews.activity.DetailsActivity"></activity>
         <activity android:name="com.headlineNews.activity.ImageShowActivity"></activity>
         <activity android:name="com.headlineNews.activity.SettingActivity"></activity>
-        
+        <activity android:name="com.headlineNews.activity.SearchActivity"></activity>
         
         
     </application>

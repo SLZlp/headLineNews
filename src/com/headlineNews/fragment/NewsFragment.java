@@ -100,6 +100,7 @@ public class NewsFragment extends Fragment{
 	}
 
 	private void initData() {
+		//判断传过来的text title 加载具体的集合  3页面 其他加载默认的
 		newsList = Constants.getNewsList();
 	}
 	

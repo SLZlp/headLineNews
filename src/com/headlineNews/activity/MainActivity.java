@@ -369,7 +369,7 @@ public class MainActivity extends FragmentActivity {
 		public void onPageScrolled(int position, float positionOffset,
 				int positionOffsetPixels) {
 		}
-
+		/**记录滑到了第几个viewpager**/
 		@Override
 		public void onPageSelected(int position) {
 			mViewPager.setCurrentItem(position);

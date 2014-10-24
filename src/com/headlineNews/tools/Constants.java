@@ -9,7 +9,7 @@ import com.headlineNews.bean.News;
 
 public class Constants {
 	/*
-	 * 获取新闻列表
+	 * 获取新闻列表    1.分类  通过title 分类  2.推荐getNewsList()   热点结合
 	 */
 	public static ArrayList<News> getNewsList() {
 		ArrayList<News> newsList = new ArrayList<News>();
