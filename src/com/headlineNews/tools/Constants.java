@@ -8,9 +8,11 @@ import com.headlineNews.bean.CityEntity;
 import com.headlineNews.bean.News;
 
 public class Constants {
-	/*
-	 * 获取新闻列表
-	 */
+	
+	
+	
+	
+	
 	public static ArrayList<News> getNewsList() {
 		ArrayList<News> newsList = new ArrayList<News>();
 		for(int i =0 ; i < 10 ; i++){
@@ -51,11 +53,11 @@ public class Constants {
 			news.setSummary("腾讯数码讯（编译：Gin）谷歌眼镜可能是目前最酷的可穿戴数码设备，你可以戴着它去任何地方（只要法律法规允许或是没有引起众怒），作为手机的第二块“增强现实显示屏”来使用。另外，虽然它仍未正式销售，但谷歌近日在美国市场举行了仅限一天的开放购买活动，价格则为1500美元（约合人民币9330元），虽然仍十分昂贵，但至少可以满足一些尝鲜者的需求，也预示着谷歌眼镜的公开大规模销售离我们越来越近了。");
 			news.setMark(i);
 			if(i == 4){
-				news.setTitle("部落战争强势回归");
+				news.setTitle("赵本山谈爱国在打谁耳光");
 				news.setLocal("推广");
-				news.setIsLarge(1);
-				String url = "http://imgt2.bdstatic.com/it/u=3269155243,2604389213&fm=21&gp=0.jpg";
-				news.setSource_url("http://games.sina.com.cn/zl/duanpian/2014-05-21/141297.shtml");
+				news.setIsLarge(1);//http://p1.pstatp.com/large/1455/6051753505
+				String url = "http://p1.pstatp.com/large/1455/6051753505";
+				news.setSource_url("http://web.toutiao.com/a3614597120/");
 				news.setPicOne(url);
 				url_list.clear();
 				url_list.add(url);

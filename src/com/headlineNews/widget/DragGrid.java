@@ -37,9 +37,9 @@ public class DragGrid extends GridView{
 	private int win_view_x;
 	/** 屏幕上的Y*/
 	private int win_view_y;
-	/** 拖动的里x的距离  */
+	/** 拖动的离x的距离  */
 	int dragOffsetX;
-	/** 拖动的里Y的距离  */
+	/** 拖动的离Y的距离  */
 	int dragOffsetY;
 	/** 长按时候对应postion */
 	public int dragPosition;
@@ -380,23 +380,20 @@ public class DragGrid extends GridView{
 
 						@Override
 						public void onAnimationStart(Animation animation) {
-							// TODO Auto-generated method stub
 							isMoving = true;
 						}
 
 						@Override
 						public void onAnimationRepeat(Animation animation) {
-							// TODO Auto-generated method stub
 
 						}
 
 						@Override
 						public void onAnimationEnd(Animation animation) {
-							// TODO Auto-generated method stub
 							// 如果为最后个动画结束，那执行下面的方法
 							if (animation.toString().equalsIgnoreCase(LastAnimationID)) {
 								DragAdapter mDragAdapter = (DragAdapter) getAdapter();
-								mDragAdapter.exchange(startPosition,dropPosition);
+								mDragAdapter.dragSortChannel(startPosition,dropPosition);
 								startPosition = dropPosition;
 								dragPosition = dropPosition;
 								isMoving = false;

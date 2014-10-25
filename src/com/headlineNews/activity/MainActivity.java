@@ -20,8 +20,8 @@ import android.widget.LinearLayout;
 import android.widget.LinearLayout.LayoutParams;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.headlineNews.R;
 import com.headlineNews.adapter.NewsFragmentPagerAdapter;
@@ -35,8 +35,8 @@ import com.headlineNews.widget.DrawerView;
 
 /**
  * 本应用的主体
- * @author jack
- *  FragmentActivity 是 android.support.v4.app.FragmentActivity包下面的
+ * 
+ * @author jack FragmentActivity 是 android.support.v4.app.FragmentActivity包下面的
  */
 public class MainActivity extends FragmentActivity {
 
@@ -62,9 +62,11 @@ public class MainActivity extends FragmentActivity {
 	/** 导航右边的阴影（图片） */
 	private ImageView shade_right;
 	/** 右端更多选项（线性布局） */
-	LinearLayout ll_more_columns;
+	RelativeLayout ll_more_columns;
 	/** 更多频道（图片按钮） */
 	private ImageView button_more_columns;
+	/** 频道管理布局 */
+	private ScrollView mChannelManage;
 	/** 显示新闻的页面（ViewPager） */
 	private ViewPager mViewPager;
 
@@ -78,9 +80,9 @@ public class MainActivity extends FragmentActivity {
 	/** 当前默认选择的频道 */
 	private int selectedChannel = 0;
 	/** 频道选项的 宽度 */
-	private int channelItemWidth = 60;
+	private int channelItemWidth = 70;
 
-	/**fragment 集合**/
+	/** fragment 集合 **/
 	private ArrayList<Fragment> fragments = new ArrayList<Fragment>();
 	/** 请求CODE */
 	public final static int CHANNELREQUEST = 1;
@@ -91,16 +93,15 @@ public class MainActivity extends FragmentActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
-		
-		//获取屏幕的宽度
+
+		// 获取屏幕的宽度
 		initBase();
-		//初始化视图
+		// 初始化视图
 		initView();
 		initSlidingMenu();
 
 		initListener();
-		
-		
+
 	}
 
 	private void initListener() {
@@ -108,6 +109,16 @@ public class MainActivity extends FragmentActivity {
 
 			@Override
 			public void onClick(View v) {
+				// RotateAnimation categoryOpenManageAnimation =
+				// (RotateAnimation) AnimationUtils.loadAnimation(mContext,
+				// R.anim.open_manage_channel);
+				// button_more_columns.setAnimation(categoryOpenManageAnimation);
+
+				Intent intent_channel = new Intent(getApplicationContext(),
+						ChannelActivity.class);
+				startActivityForResult(intent_channel, CHANNELREQUEST);
+				overridePendingTransition(R.anim.slide_in_right,
+						R.anim.slide_out_left);
 
 			}
 		});
@@ -119,7 +130,7 @@ public class MainActivity extends FragmentActivity {
 		switch (requestCode) {
 		case CHANNELREQUEST:
 			if (resultCode == CHANNELRESULT) {
-
+				setChangelView();
 			}
 			break;
 		}
@@ -136,7 +147,7 @@ public class MainActivity extends FragmentActivity {
 	 * 初始化视图
 	 */
 	private void initView() {
-		
+
 		head_progress = (ProgressBar) findViewById(R.id.head_progress);
 		head_refresh = (ImageView) findViewById(R.id.head_refresh);
 		head_munu = (ImageView) findViewById(R.id.head_munu);
@@ -146,8 +157,9 @@ public class MainActivity extends FragmentActivity {
 		mRadioGroup_content = (LinearLayout) findViewById(R.id.mRadioGroup_content);
 		shade_left = (ImageView) findViewById(R.id.shade_left);
 		shade_right = (ImageView) findViewById(R.id.shade_right);
-		ll_more_columns = (LinearLayout) findViewById(R.id.ll_more_columns);
+		ll_more_columns = (RelativeLayout) findViewById(R.id.ll_more_columns);
 		button_more_columns = (ImageView) findViewById(R.id.button_more_columns);
+		// mChannelManage = (ScrollView) findViewById(R.id.mChannelManage);
 		mViewPager = (ViewPager) findViewById(R.id.mViewPager);
 
 		setChangelView();
@@ -168,28 +180,21 @@ public class MainActivity extends FragmentActivity {
 				AppApplication.getApp().getSQLHelper()).getUserChannel());
 	}
 
-	
 	/**
 	 * 初始化Column栏目项
 	 * */
 	private void initTabColumn() {
-		//移除线性布局中所有试图
+		// 移除线性布局中所有试图
 		mRadioGroup_content.removeAllViews();
 		int count = userChannelList.size();
-		mColumnHorizontalScrollView.setParam(this, mScreenWidth,
-				mRadioGroup_content, shade_left, shade_right, ll_more_columns,
-				rl_column);
 		for (int i = 0; i < count; i++) {
 			LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
 					channelItemWidth, LayoutParams.WRAP_CONTENT);
 			params.leftMargin = 5;
 			params.rightMargin = 5;
-			// TextView localTextView = (TextView)
-			// mInflater.inflate(R.layout.column_radio_item, null);
 			TextView columnTextView = new TextView(this);
 			columnTextView.setTextAppearance(this,
 					R.style.top_category_scroll_view_item_text);
-			// localTextView.setBackground(getResources().getDrawable(R.drawable.top_category_scroll_text_view_bg));
 			columnTextView.setBackgroundResource(R.drawable.radio_buttong_bg);
 			columnTextView.setGravity(Gravity.CENTER);
 			columnTextView.setPadding(5, 5, 5, 5);
@@ -200,6 +205,8 @@ public class MainActivity extends FragmentActivity {
 			if (selectedChannel == i) {
 				columnTextView.setSelected(true);
 			}
+			mRadioGroup_content.addView(columnTextView, i, params);
+			// 点击频道
 			columnTextView.setOnClickListener(new OnClickListener() {
 
 				@Override
@@ -213,14 +220,9 @@ public class MainActivity extends FragmentActivity {
 							mViewPager.setCurrentItem(i);
 						}
 					}
-					
-					//这个其实就是你滑动一下弹的这个弹土司
-					Toast.makeText(getApplicationContext(),
-							userChannelList.get(v.getId()).CName,
-							Toast.LENGTH_SHORT).show();
+
 				}
 			});
-			mRadioGroup_content.addView(columnTextView, i, params);
 		}
 	}
 

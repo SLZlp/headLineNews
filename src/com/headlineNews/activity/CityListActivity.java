@@ -46,8 +46,9 @@ public class CityListActivity extends BaseActivity {
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
-//				Intent intent = new Intent(getApplicationContext(), DetailsActivity.class);
-//				startActivity(intent);
+				
+				
+				
 				overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
 			}
 		});

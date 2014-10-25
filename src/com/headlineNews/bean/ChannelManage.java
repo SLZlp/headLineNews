@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Map;
 
 import android.database.SQLException;
-import android.util.Log;
 
 import com.headlineNews.dao.ChannelDao;
 import com.headlineNews.db.SQLHelper;
@@ -83,11 +82,12 @@ public class ChannelManage {
 	 * 获取默认的频道
 	 * @return 数据库存在用户配置 ? 数据库内的用户选择频道 : 默认用户选择频道 ;
 	 */
+	@SuppressWarnings("unchecked")
 	public List<Channel> getUserChannel() {
 		Object cacheList = channelDao.listCache(SQLHelper.SELECTED + "= ?",new String[] { "1" });
-		if (cacheList != null && !((List) cacheList).isEmpty()) {
+		if (cacheList != null && !((List<Map<String, String>>) cacheList).isEmpty()) {
 			userExist = true;
-			List<Map<String, String>> maplist = (List) cacheList;
+			List<Map<String, String>> maplist = (List<Map<String, String>>) cacheList;
 			int count = maplist.size();
 			List<Channel> list = new ArrayList<Channel>();
 			for (int i = 0; i < count; i++) {
@@ -108,11 +108,12 @@ public class ChannelManage {
 	 * 获取其他的频道
 	 * @return 数据库存在用户配置 ? 数据库内的其它频道 : 默认其它频道 ;
 	 */
+	@SuppressWarnings("unchecked")
 	public List<Channel> getOtherChannel() {
 		Object cacheList = channelDao.listCache(SQLHelper.SELECTED + "= ?" ,new String[] { "0" });
 		List<Channel> list = new ArrayList<Channel>();
-		if (cacheList != null && !((List) cacheList).isEmpty()){
-			List<Map<String, String>> maplist = (List) cacheList;
+		if (cacheList != null && !((List<Map<String, String>>) cacheList).isEmpty()){
+			List<Map<String, String>> maplist = (List<Map<String, String>>) cacheList;
 			int count = maplist.size();
 			for (int i = 0; i < count; i++) {
 				Channel navigate= new Channel();

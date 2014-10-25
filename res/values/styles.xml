@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!--
         Base application theme, dependent on API level. This theme is replaced
@@ -17,6 +17,10 @@
 
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
         <item name="android:windowNoTitle">true</item>
+    </style>
+    <style name="category_text">
+        <item name="android:textSize">17.0sp</item>
+        <item name="android:textColor">@color/category_item_other</item>
     </style>
 
     <style name="top_category_scroll_view_item_text">
@@ -67,7 +71,7 @@
 
     <style name="left_drawer_item_text">
         <item name="android:textSize">15.0sp</item>
-        <item name="android:textColor">@color/left_drawer_item_text</item>
+        <item name="android:textColor">@color/left_drawer_item_text_normal</item>
         <item name="android:gravity">center</item>
         <item name="android:paddingTop">9.0dip</item>
         <item name="android:paddingBottom">9.0dip</item>
@@ -404,7 +408,7 @@
     </style>
 
     <style name="subscribe_more_tip_text" parent="@style/subscribe_my_tip_text">
-        <item name="android:textSize">13.0sp</item>
+        <item name="android:textColor">@color/subscribe_tip_more_text</item>
     </style>
 
     <style name="list_notify_view">
@@ -495,7 +499,56 @@
         <item name="android:textColor">#ffeeeeee</item>
     </style>
 
+    <style name="subscribe_my_small_tip_text" parent="@style/subscribe_my_tip_text">
+        <item name="android:textSize">12.0sp</item>
+    </style>
+    <style name="edit_order_btn">
+        <item name="android:textSize">15.0sp</item>
+        <item name="android:textColor">@color/btn_order_text</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/btn_order</item>
+        <item name="android:minWidth">56.0dip</item>
+        <item name="android:minHeight">24.0dip</item>
+    </style>
+    <style name="subscribe_new_text">
+        <item name="android:textSize">8.0sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/category_new_flag_text</item>
+        <item name="android:background">@drawable/bg_new_category_flag</item>
+        <item name="android:paddingLeft">2.0dip</item>
+        <item name="android:paddingRight">2.0dip</item>
+        <item name="android:text">NEW</item>
+    </style>
+    <style name="label">
+        <item name="android:textSize">10.0sp</item>
+        <item name="android:textColor">@color/label_text</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">top</item>
+        <item name="android:paddingLeft">@dimen/label_horizontal_padding</item>
+        <item name="android:paddingTop">@dimen/label_vertical_padding</item>
+        <item name="android:paddingRight">@dimen/label_horizontal_padding</item>
+        <item name="android:paddingBottom">@dimen/label_vertical_padding</item>
+    </style>
+    <style name="feed_bottom_text">
+        <item name="android:textSize">11.0sp</item>
+        <item name="android:textColor">@color/feed_bottom_text</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">top</item>
+        <item name="android:singleLine">true</item>
+    </style>
     
-    
+    <style name="rating_bar_style" parent="@android:style/Widget.RatingBar">
+        <item name="android:gravity">center</item>
+        <item name="android:maxHeight">11.5dip</item>
+        <item name="android:progressDrawable">@drawable/ratingbar_progress</item>
+        <item name="android:minHeight">11.5dip</item>
+        <item name="android:isIndicator">true</item>
+    </style>
+    <style name="download_progress_bar" parent="@android:style/Widget.ProgressBar.Horizontal">
+        <item name="android:maxHeight">6.0dip</item>
+        <item name="android:indeterminateOnly">false</item>
+        <item name="android:progressDrawable">@drawable/download_progress_bar_horizontal</item>
+        <item name="android:minHeight">3.0dip</item>
+    </style>
 
 </resources>

@@ -78,7 +78,4 @@
         android:layout_height="wrap_content"
         android:visibility="gone" />
 
-    <!-- android:divider="#ffdddddd" -->
-    <!-- android:dividerHeight="0.5dp" -->
-
 </RelativeLayout>

@@ -47,13 +47,13 @@ public class DrawerView implements OnClickListener {
 
 					}
 				});
-		localSlidingMenu.setOnClosedListener(new OnClosedListener() {
+		/*localSlidingMenu.setOnClosedListener(new OnClosedListener() {
 
 			@Override
 			public void onClosed() {
 
 			}
-		});
+		});*/
 		// initView();
 		return localSlidingMenu;
 	}
@@ -64,3 +64,10 @@ public class DrawerView implements OnClickListener {
 	}
 
 }
+
+
+
+
+
+
+

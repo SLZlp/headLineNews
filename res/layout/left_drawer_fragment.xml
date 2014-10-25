@@ -195,7 +195,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="14.0dip"
                             android:text="@string/left_drawer_item_offline"
-                            android:textColor="@color/left_drawer_item_text"
+                            android:textColor="@color/left_drawer_item_text_normal"
                             android:textSize="15.0sp" />
 
                         <TextView
