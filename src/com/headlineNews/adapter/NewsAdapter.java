@@ -37,9 +37,7 @@ public class NewsAdapter extends BaseAdapter implements SectionIndexer, HeaderAd
 	ArrayList<News> newsList;
 	Activity activity;
 	LayoutInflater inflater = null;
-	//引用第三方 包  图片加载 ImageLoader  得到图片加载的实例
 	protected ImageLoader imageLoader = ImageLoader.getInstance();
-	//引用第三方包
 	DisplayImageOptions options;
 	/** 弹出的更多选择框  */
 	private PopupWindow popupWindow;

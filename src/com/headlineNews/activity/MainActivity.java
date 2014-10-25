@@ -213,8 +213,6 @@ public class MainActivity extends FragmentActivity {
 							mViewPager.setCurrentItem(i);
 						}
 					}
-					
-					//这个其实就是你滑动一下弹的这个弹土司
 					Toast.makeText(getApplicationContext(),
 							userChannelList.get(v.getId()).CName,
 							Toast.LENGTH_SHORT).show();
