@@ -1,8 +1,81 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- Default screen margins, per the Android Design guidelines. -->
-
+    <dimen name="abc_config_prefDialogWidth">320.0dip</dimen>
+    <dimen name="abc_action_bar_stacked_tab_max_width">180.0dip</dimen>
+    <dimen name="abc_action_bar_default_height">48.0dip</dimen>
+    <dimen name="abc_action_bar_icon_vertical_padding">8.0dip</dimen>
+    <dimen name="abc_action_bar_title_text_size">18.0dip</dimen>
+    <dimen name="abc_action_bar_subtitle_text_size">14.0dip</dimen>
+    <dimen name="abc_action_bar_subtitle_top_margin">-3.0dip</dimen>
+    <dimen name="abc_action_bar_subtitle_bottom_margin">5.0dip</dimen>
+    <dimen name="abc_action_button_min_width">56.0dip</dimen>
+    <dimen name="abc_action_bar_stacked_max_height">48.0dip</dimen>
+    <dimen name="abc_panel_menu_list_width">296.0dip</dimen>
+    <dimen name="abc_search_view_text_min_width">160.0dip</dimen>
+    <dimen name="abc_search_view_preferred_width">320.0dip</dimen>
+    <dimen name="abc_dropdownitem_text_padding_left">8.0dip</dimen>
+    <dimen name="abc_dropdownitem_text_padding_right">8.0dip</dimen>
+    <dimen name="abc_dropdownitem_icon_width">32.0dip</dimen>
+    <dimen name="shadow_height">5.0dip</dimen>
+    <dimen name="arc_progress_radius">50.0dip</dimen>
+    <dimen name="tab_indicator_height">48.0dip</dimen>
+    <dimen name="tab_padding_top">3.0dip</dimen>
+    <dimen name="tab_padding_bottom">2.0dip</dimen>
+    <dimen name="indicator_new_margin_top">3.0dip</dimen>
+    <dimen name="indicator_new_margin_right">10.0dip</dimen>
+    <dimen name="indicator_number_margin_top">-2.0dip</dimen>
+    <dimen name="indicator_number_margin_right">10.0dip</dimen>
+    <dimen name="corner_radius">8.0dip</dimen>
+    <dimen name="tab_space_top">4.0dip</dimen>
+    <dimen name="tab_space">0.0dip</dimen>
+    <dimen name="tab_space_plus1">3.0dip</dimen>
+    <dimen name="tab_space_bottom_line">36.0sp</dimen>
+    <dimen name="tab_space_unselected_top">6.0sp</dimen>
+    <dimen name="title_bar_height">44.0dip</dimen>
+    <dimen name="tab_bar_height">44.0dip</dimen>
+    <dimen name="indicator_right_padding">10.0dip</dimen>
+    <dimen name="indicator_corner_radius">12.0dip</dimen>
+    <dimen name="indicator_internal_padding">4.0dip</dimen>
+    <dimen name="header_footer_left_right_padding">24.0dip</dimen>
+    <dimen name="header_footer_top_bottom_padding">12.0dip</dimen>
+    <dimen name="bg_row_corner_radius">8.0dip</dimen>
+    <dimen name="bg_row_corner_radius_none">0.0dip</dimen>
+    <dimen name="bg_row_padding_left">1.0dip</dimen>
+    <dimen name="bg_row_padding_right">1.0dip</dimen>
+    <dimen name="bg_row_padding_top">1.0dip</dimen>
+    <dimen name="bg_row_padding_bottom">1.0dip</dimen>
+    <dimen name="bg_row_border_width">0.5dip</dimen>
+    <dimen name="social_list_avatar_size">28.0dip</dimen>
+    <dimen name="social_list_avatar_corner">14.0dip</dimen>
+    <dimen name="social_homepage_avatar_size">60.0dip</dimen>
+    <dimen name="social_homepage_avatar_corner">2.0dip</dimen>
+    <dimen name="account_avatar_size">30.0dip</dimen>
+    <dimen name="account_avatar_corner">5.0dip</dimen>
+    <dimen name="popover_item_width">85.0dip</dimen>
+    <dimen name="popover_drawable_padding">6.0dip</dimen>
+    <dimen name="popover_row_margin_top">28.0dip</dimen>
+    <dimen name="feedback_sumbit_thumbnail_size">50.0dip</dimen>
+    <dimen name="feedback_avatar_size">30.0dip</dimen>
+    <dimen name="feedback_avatar_corner">4.0dip</dimen>
+    <dimen name="feedback_avatar_radius">15.0dip</dimen>
+    <dimen name="feedback_image_padding">180.0dip</dimen>
+    <dimen name="alert_image_width">271.0dip</dimen>
+    <dimen name="alert_image_height">220.0dip</dimen>
+    <dimen name="ss_platform_margin">3.0dip</dimen>
+    <dimen name="ss_platform_margin_bottom">13.0dip</dimen>
+    <dimen name="ss_avatar_corner">4.0dip</dimen>
+    <dimen name="ss_avatar_size">30.0dip</dimen>
+    <dimen name="ss_new_avatar_size">26.0dip</dimen>
+    <dimen name="ss_new_avatar_radius">3.0dip</dimen>
+    <dimen name="ss_profile_avatar_size">40.0dip</dimen>
+    <dimen name="ss_dot_radius">5.0dip</dimen>
+    <dimen name="ss_dot_spacing">5.0dip</dimen>
+    <dimen name="ss_action_offset_left">8.0dip</dimen>
+    <dimen name="ss_action_text_size">14.0dip</dimen>
+    <dimen name="ss_shadow_height">5.0dip</dimen>
+    <dimen name="ss_share_titlebar_height">5.0dip</dimen>
+    <dimen name="ss_share_diglog_margin_x">8.0dip</dimen>
+    <dimen name="ss_share_dialog_pos_y">28.0dip</dimen>
     <dimen name="munion_activity_horizontal_margin">16.0dip</dimen>
     <dimen name="munion_activity_vertical_margin">16.0dip</dimen>
     <dimen name="munion_actionbar_height">48.0dip</dimen>
@@ -243,6 +316,8 @@
     <dimen name="label_vertical_padding">0.5dip</dimen>
     <dimen name="popup_bar_minheight">32.0dip</dimen>
     <dimen name="popup_bar_item_minwidth">80.0dip</dimen>
+    
+    
     <dimen name="list_item_horizontal_padding">8.0dip</dimen>
-
+    
 </resources>
