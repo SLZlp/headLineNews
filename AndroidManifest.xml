@@ -28,6 +28,7 @@
             </intent-filter>
         </activity>
         <activity android:name="com.headlineNews.activity.MainActivity"></activity>
+        <activity android:name="com.headlineNews.activity.ChannelActivity"></activity>
     </application>
 
     
