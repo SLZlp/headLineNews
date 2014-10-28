@@ -1,0 +1,494 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/activity_bg_color" >
+
+    <!-- 这里要引入一个布局   标题条的布局 -->
+
+    <include
+        android:id="@+id/title_bar"
+        layout="@layout/title_bar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/title_bar" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10dp" >
+
+                <LinearLayout
+                    android:id="@+id/setting_list_mode"
+                    android:layout_width="match_parent"
+                    android:layout_height="42.0dp"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/title_list_mode"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:text="@string/setting_list_mode"
+                        android:textColor="#ff333333"
+                        android:textSize="17.0sp" />
+
+                    <View
+                        android:layout_width="0.0dp"
+                        android:layout_height="1.0dp"
+                        android:layout_weight="1.0" />
+
+                    <CheckBox
+                        android:id="@+id/checkbox_list_mode"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginRight="10.0dip"
+                        android:layout_weight="0.0" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/setting_font_size"
+                    android:layout_width="match_parent"
+                    android:layout_height="42dp"
+                    android:layout_marginTop="-0.5dp"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/font_size_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:text="@string/setting_font_size"
+                        android:textColor="#ff333333"
+                        android:textSize="17.0sp" />
+
+                    <View
+                        android:layout_width="0.0dp"
+                        android:layout_height="1.0dp"
+                        android:layout_weight="1.0" />
+
+                    <ImageView
+                        android:id="@+id/font_size_arrow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginRight="10.0dip"
+                        android:layout_weight="0.0"
+                        android:contentDescription="@null"
+                        android:src="@drawable/arrow_drawer" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/setting_list_comment"
+                    android:layout_width="match_parent"
+                    android:layout_height="42dp"
+                    android:layout_marginTop="-0.5dp"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/list_comment_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:text="@string/setting_list_comment"
+                        android:textColor="#ff333333"
+                        android:textSize="17.0sp" />
+
+                    <View
+                        android:layout_width="0.0dp"
+                        android:layout_height="1.0dp"
+                        android:layout_weight="1.0" />
+
+                    <ImageView
+                        android:id="@+id/list_comment_mode"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginRight="10.0dip"
+                        android:layout_weight="0.0"
+                        android:contentDescription="@null"
+                        android:src="@drawable/arrow_drawer" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/setting_refresh_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="42dp"
+                    android:layout_marginTop="-0.5dp"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/refresh_list_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:text="@string/setting_refresh_list"
+                        android:textColor="#ff333333"
+                        android:textSize="17.0sp" />
+
+                    <View
+                        android:layout_width="0.0dp"
+                        android:layout_height="1.0dp"
+                        android:layout_weight="1.0" />
+
+                    <ImageView
+                        android:id="@+id/refresh_list_mode"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginRight="10.0dip"
+                        android:layout_weight="0.0"
+                        android:contentDescription="@null"
+                        android:src="@drawable/arrow_drawer" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/setting_load_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="42dp"
+                    android:layout_marginTop="-0.5dp"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/load_image_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:text="@string/setting_load_image"
+                        android:textColor="#ff333333"
+                        android:textSize="17.0sp" />
+
+                    <View
+                        android:layout_width="0.0dp"
+                        android:layout_height="1.0dp"
+                        android:layout_weight="1.0" />
+
+                    <ImageView
+                        android:id="@+id/load_image_arrow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginRight="10.0dip"
+                        android:layout_weight="0.0"
+                        android:contentDescription="@null"
+                        android:src="@drawable/arrow_drawer" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/clear"
+                    android:layout_width="match_parent"
+                    android:layout_height="42dp"
+                    android:layout_marginTop="-0.5dp"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/clear_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:text="@string/setting_clear"
+                        android:textColor="#ff333333"
+                        android:textSize="17.0sp" />
+
+                    <View
+                        android:layout_width="0.0dp"
+                        android:layout_height="1.0dp"
+                        android:layout_weight="1.0" />
+
+                    <ImageView
+                        android:id="@+id/clear_arrow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginRight="10.0dip"
+                        android:layout_weight="0.0"
+                        android:contentDescription="@null"
+                        android:src="@drawable/arrow_drawer" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/notify"
+                    android:layout_width="match_parent"
+                    android:layout_height="42.0dp"
+                    android:layout_marginTop="15.0dp"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/notify_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:text="@string/setting_notify"
+                        android:textColor="#ff333333"
+                        android:textSize="17.0sp" />
+
+                    <View
+                        android:layout_width="0.0dp"
+                        android:layout_height="1.0dp"
+                        android:layout_weight="1.0" />
+
+                    <CheckBox
+                        android:id="@+id/checkbox_notify"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginRight="10.0dip"
+                        android:layout_weight="0.0" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/interactive"
+                    android:layout_width="match_parent"
+                    android:layout_height="42dp"
+                    android:layout_marginTop="-0.5dp"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/interactive_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:text="@string/setting_interactive"
+                        android:textColor="#ff333333"
+                        android:textSize="17.0sp" />
+
+                    <View
+                        android:layout_width="0.0dp"
+                        android:layout_height="1.0dp"
+                        android:layout_weight="1.0" />
+
+                    <CheckBox
+                        android:id="@+id/checkbox_interactive"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginRight="10.0dip"
+                        android:layout_weight="0.0" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/around_page"
+                    android:layout_width="match_parent"
+                    android:layout_height="42dp"
+                    android:layout_marginTop="-0.5dp"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/around_page_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:text="@string/setting_around_page"
+                        android:textColor="#ff333333"
+                        android:textSize="17.0sp" />
+
+                    <View
+                        android:layout_width="0.0dp"
+                        android:layout_height="1.0dp"
+                        android:layout_weight="1.0" />
+
+                    <CheckBox
+                        android:id="@+id/checkbox_around_page"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginRight="10.0dip"
+                        android:layout_weight="0.0" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/share_when_favor"
+                    android:layout_width="match_parent"
+                    android:layout_height="42dp"
+                    android:layout_marginTop="-0.5dp"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/share_when_favor_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:text="@string/setting_share_when_favor"
+                        android:textColor="#ff333333"
+                        android:textSize="17.0sp" />
+
+                    <View
+                        android:layout_width="0.0dp"
+                        android:layout_height="1.0dp"
+                        android:layout_weight="1.0" />
+
+                    <CheckBox
+                        android:id="@+id/checkbox_share_when_favor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginRight="10.0dip"
+                        android:layout_weight="0.0" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/share_when_diggbury"
+                    android:layout_width="match_parent"
+                    android:layout_height="42.0dp"
+                    android:layout_marginTop="-0.5dp"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/share_when_diggbury_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:text="@string/setting_share_when_diggbury"
+                        android:textColor="#ff333333"
+                        android:textSize="17.0sp" />
+
+                    <View
+                        android:layout_width="0.0dp"
+                        android:layout_height="1.0dp"
+                        android:layout_weight="1.0" />
+
+                    <CheckBox
+                        android:id="@+id/checkbox_share_when_diggbury"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginRight="10.0dip"
+                        android:layout_weight="0.0" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/update"
+                    android:layout_width="match_parent"
+                    android:layout_height="42.0dp"
+                    android:layout_marginTop="-0.5dp"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/update_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:text="@string/setting_update"
+                        android:textColor="#ff333333"
+                        android:textSize="17.0sp" />
+
+                    <ImageView
+                        android:id="@+id/version_new"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginRight="5.0dip"
+                        android:layout_weight="0.0"
+                        android:contentDescription="@null"
+                        android:src="@drawable/icon_new"
+                        android:visibility="gone" />
+
+                    <View
+                        android:layout_width="0.0dp"
+                        android:layout_height="1.0dp"
+                        android:layout_weight="1.0" />
+
+                    <ImageView
+                        android:id="@+id/update_arrow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginRight="10.0dip"
+                        android:layout_weight="0.0"
+                        android:contentDescription="@null"
+                        android:src="@drawable/arrow_drawer" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/use_help"
+                    android:layout_width="match_parent"
+                    android:layout_height="42.0dp"
+                    android:layout_marginTop="-0.5dp"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/use_help_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:text="@string/setting_use_help"
+                        android:textColor="#ff333333"
+                        android:textSize="17.0sp" />
+
+                    <View
+                        android:layout_width="0.0dip"
+                        android:layout_height="1.0dip"
+                        android:layout_weight="1.0" />
+
+                    <ImageView
+                        android:id="@+id/use_help_arrow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginRight="10.0dip"
+                        android:layout_weight="0.0"
+                        android:contentDescription="@null"
+                        android:src="@drawable/arrow_drawer" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/copyright"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10.0dip"
+                android:text="@string/app_copyright"
+                android:textColor="#ff999999"
+                android:textSize="13.0sp" />
+
+            <TextView
+                android:id="@+id/release_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8.0dip"
+                android:layout_marginTop="6.0dip"
+                android:textColor="#ff999999"
+                android:textSize="12.0sp" />
+            
+            
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>
