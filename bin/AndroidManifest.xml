@@ -9,6 +9,8 @@
         android:targetSdkVersion="18" />
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 震动权限 -->
+    <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
         android:name="com.headlineNews.application.AppApplication"
@@ -42,6 +44,8 @@
             android:label="@string/title_activity_notice" >
         </activity>
         <activity android:name="com.headlineNews.activity.CampaignActivity" >
+        </activity>
+        <activity android:name="com.headlineNews.activity.ChannelActivity" >
         </activity>
     </application>
 

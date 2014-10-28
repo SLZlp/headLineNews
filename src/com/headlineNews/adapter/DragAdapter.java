@@ -3,7 +3,6 @@ package com.headlineNews.adapter;
 import java.util.List;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,7 +14,7 @@ import com.headlineNews.bean.Channel;
 
 public class DragAdapter extends BaseAdapter{
 	/** TAG*/
-	private final static String TAG = "DragAdapter";
+//	private final static String TAG = "DragAdapter";
 	/** 是否显示底部的ITEM */
 	private boolean isItemShow = false;
 	private Context context;
@@ -41,22 +40,18 @@ public class DragAdapter extends BaseAdapter{
 	
 	@Override
 	public int getCount() {
-		// TODO Auto-generated method stub
 		return channelList == null ? 0 : channelList.size();
 	}
 
 	@Override
 	public Channel getItem(int position) {
-		// TODO Auto-generated method stub
-		if (channelList != null && channelList.size() != 0) {
-			return channelList.get(position);
-		}
-		return null;
+		if (channelList == null || channelList.size() == 0)
+			return null;
+		return channelList.get(position);
 	}
 
 	@Override
 	public long getItemId(int position) {
-		// TODO Auto-generated method stub
 		return position;
 	}
 	
@@ -67,7 +62,6 @@ public class DragAdapter extends BaseAdapter{
 		Channel channel = getItem(position);
 		item_text.setText(channel.CName);
 		if ((position == 0) || (position == 1)){
-//			item_text.setTextColor(context.getResources().getColor(R.color.black));
 			item_text.setEnabled(false);
 		}
 		if (isChanged && (position == holdPosition) && !isItemShow) {
@@ -88,17 +82,17 @@ public class DragAdapter extends BaseAdapter{
 	}
 
 	/** 添加频道列表 */
-	public void addItem(Channel channel) {
+	public void addChannel(Channel channel) {
 		channelList.add(channel);
 		isListChanged = true;
 		notifyDataSetChanged();
 	}
 
 	/** 拖动变更频道排序 */
-	public void exchange(int dragPostion, int dropPostion) {
+	public void dragSortChannel(int dragPostion, int dropPostion) {
 		holdPosition = dropPostion;
 		Channel dragItem = getItem(dragPostion);
-		Log.d(TAG, "startPostion=" + dragPostion + ";endPosition=" + dropPostion);
+//		Log.d(TAG, "startPostion=" + dragPostion + ";endPosition=" + dropPostion);
 		if (dragPostion < dropPostion) {
 			channelList.add(dropPostion + 1, dragItem);
 			channelList.remove(dragPostion);
@@ -112,18 +106,18 @@ public class DragAdapter extends BaseAdapter{
 	}
 	
 	/** 获取频道列表 */
-	public List<Channel> getChannnelLst() {
+	public List<Channel> getChannelList() {
 		return channelList;
 	}
 
 	/** 设置删除的position */
-	public void setRemove(int position) {
+	public void setRemoveChannel(int position) {
 		remove_position = position;
 		notifyDataSetChanged();
 	}
 
 	/** 删除频道列表 */
-	public void remove() {
+	public void removeChannel() {
 		channelList.remove(remove_position);
 		remove_position = -1;
 		isListChanged = true;
@@ -131,8 +125,8 @@ public class DragAdapter extends BaseAdapter{
 	}
 	
 	/** 设置频道列表 */
-	public void setListDate(List<Channel> list) {
-		channelList = list;
+	public void setListDate(List<Channel> channelList) {
+		this.channelList = channelList;
 	}
 	
 	/** 获取是否可见 */
@@ -146,8 +140,8 @@ public class DragAdapter extends BaseAdapter{
 	}
 	
 	/** 设置是否可见 */
-	public void setVisible(boolean visible) {
-		isVisible = visible;
+	public void setVisible(boolean flag) {
+		isVisible = flag;
 	}
 	/** 显示放下的ITEM */
 	public void setShowDropItem(boolean show) {

@@ -486,8 +486,6 @@
                 android:layout_marginTop="6.0dip"
                 android:textColor="#ff999999"
                 android:textSize="12.0sp" />
-            
-            
         </LinearLayout>
     </ScrollView>
 

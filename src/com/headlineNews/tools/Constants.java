@@ -4,16 +4,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.headlineNews.bean.CityEntity;
-//import com.topnews.bean.NewsClassify;
 import com.headlineNews.bean.News;
 
 public class Constants {
 	/*
 	 * 获取新闻列表
 	 */
+
 	public static ArrayList<News> getNewsList() {
 		ArrayList<News> newsList = new ArrayList<News>();
-		for(int i =0 ; i < 10 ; i++){
+		for (int i = 0; i < 10; i++) {
 			News news = new News();
 			news.setId(i);
 			news.setNewsId(i);
@@ -27,7 +27,7 @@ public class Constants {
 			news.setSource_url("http://news.sina.com.cn/c/2014-05-05/134230063386.shtml");
 			news.setTitle("可以用谷歌眼镜做的10件酷事：导航、玩游戏");
 			List<String> url_list = new ArrayList<String>();
-			if(i%2 == 1){
+			if (i % 2 == 1) {
 				String url1 = "http://infopic.gtimg.com/qq_news/digi/pics/102/102066/102066094_400_640.jpg";
 				String url2 = "http://infopic.gtimg.com/qq_news/digi/pics/102/102066/102066096_400_640.jpg";
 				String url3 = "http://infopic.gtimg.com/qq_news/digi/pics/102/102066/102066099_400_640.jpg";
@@ -38,7 +38,7 @@ public class Constants {
 				url_list.add(url1);
 				url_list.add(url2);
 				url_list.add(url3);
-			}else{
+			} else {
 				news.setTitle("AA用车:智能短租租车平台");
 				String url = "http://r3.sinaimg.cn/2/2014/0417/a7/6/92478595/580x1000x75x0.jpg";
 				news.setPicOne(url);
@@ -50,34 +50,34 @@ public class Constants {
 			news.setSource("手机腾讯网");
 			news.setSummary("腾讯数码讯（编译：Gin）谷歌眼镜可能是目前最酷的可穿戴数码设备，你可以戴着它去任何地方（只要法律法规允许或是没有引起众怒），作为手机的第二块“增强现实显示屏”来使用。另外，虽然它仍未正式销售，但谷歌近日在美国市场举行了仅限一天的开放购买活动，价格则为1500美元（约合人民币9330元），虽然仍十分昂贵，但至少可以满足一些尝鲜者的需求，也预示着谷歌眼镜的公开大规模销售离我们越来越近了。");
 			news.setMark(i);
-			if(i == 4){
-				news.setTitle("部落战争强势回归");
+			if (i == 4) {
+				news.setTitle("赵本山谈爱国在打谁耳光");
 				news.setLocal("推广");
-				news.setIsLarge(1);
-				String url = "http://imgt2.bdstatic.com/it/u=3269155243,2604389213&fm=21&gp=0.jpg";
-				news.setSource_url("http://games.sina.com.cn/zl/duanpian/2014-05-21/141297.shtml");
+				news.setIsLarge(1);// http://p1.pstatp.com/large/1455/6051753505
+				String url = "http://p1.pstatp.com/large/1455/6051753505";
+				news.setSource_url("http://web.toutiao.com/a3614597120/");
 				news.setPicOne(url);
 				url_list.clear();
 				url_list.add(url);
-			}else{
+			} else {
 				news.setIsLarge(0);
 			}
-			if(i == 2){
+			if (i == 2) {
 				news.setComment("评论部分，说的非常好。");
 			}
-			
-			if(i <= 2){
+
+			if (i <= 2) {
 				news.setPublishTime(Long.valueOf(DateTools.getTime()));
-			}else if(i >2 && i <= 5){
+			} else if (i > 2 && i <= 5) {
 				news.setPublishTime(Long.valueOf(DateTools.getTime()) - 86400);
-			}else{
+			} else {
 				news.setPublishTime(Long.valueOf(DateTools.getTime()) - 86400 * 2);
 			}
 			newsList.add(news);
 		}
 		return newsList;
 	}
-	
+
 	/** mark=0 ：推荐 */
 	public final static int mark_recom = 0;
 	/** mark=1 ：热门 */
@@ -88,12 +88,12 @@ public class Constants {
 	public final static int mark_exclusive = 3;
 	/** mark=4 ：收藏 */
 	public final static int mark_favor = 4;
-	
+
 	/*
 	 * 获取城市列表
 	 */
-	public static ArrayList<CityEntity> getCityList(){
-		ArrayList<CityEntity> cityList =new ArrayList<CityEntity>();
+	public static ArrayList<CityEntity> getCityList() {
+		ArrayList<CityEntity> cityList = new ArrayList<CityEntity>();
 		CityEntity city1 = new CityEntity(1, "安吉", 'A');
 		CityEntity city2 = new CityEntity(2, "北京", 'B');
 		CityEntity city3 = new CityEntity(3, "长春", 'C');
@@ -122,6 +122,7 @@ public class Constants {
 		cityList.add(city13);
 		return cityList;
 	}
+
 	/* 频道中区域 如杭州 对应的栏目ID */
 	public final static int CHANNEL_CITY = 3;
 }

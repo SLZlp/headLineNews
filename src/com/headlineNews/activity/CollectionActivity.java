@@ -33,11 +33,11 @@ public class CollectionActivity extends BaseActivity implements OnClickListener{
 		iv_Return=(ImageView) findViewById(R.id.iv_Return);
 		
 	}
-	
+	/*
 	private void initListener() {
 		iv_Return.setOnClickListener(this);
 		
-	}
+	}*/
 	
 	/**
 	 * 按返回键的时候 调用动画 从左边，到右边 这里应该要判断下，

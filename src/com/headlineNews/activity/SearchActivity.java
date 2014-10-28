@@ -31,12 +31,12 @@ public class SearchActivity extends BaseActivity implements OnClickListener {
 
 	}
 
-	private void initListener() {
+	/*private void initListener() {
 		iv_search.setOnClickListener(this);
 		iv_delete.setOnClickListener(this);
 		tv_cancel.setOnClickListener(this);
 
-	}
+	}*/
 
 	/**
 	 * 按返回键的时候 调用动画 从左边，到右边 这里应该要判断下，如果页面打开时动画师从左到右的， 那么按返回键应该是与之相反的动画效果

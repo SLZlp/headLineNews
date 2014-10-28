@@ -133,7 +133,8 @@
                 android:background="#ff272727"
                 android:contentDescription="@null" />
 
-           <!--  这是用户登录后显示的头像  表示用户在线  <RelativeLayout
+            <!--
+            这是用户登录后显示的头像  表示用户在线  <RelativeLayout
                 android:id="@+id/pgc_btn"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
@@ -155,7 +156,8 @@
                     android:paddingTop="9.0dp"
                     android:textColor="@color/left_drawer_item_text"
                     android:textSize="15.0sp" />
-            </RelativeLayout> -->
+            </RelativeLayout>
+            -->
 
             <ImageView
                 android:layout_width="match_parent"
@@ -251,10 +253,10 @@
             </RelativeLayout>
 
             <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="0.5dp"
-                    android:background="#ff272727"
-                    android:contentDescription="@null" />
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="#ff272727"
+                android:contentDescription="@null" />
 
             <LinearLayout
                 android:id="@+id/app_activity_layout"
@@ -364,7 +366,6 @@
                 android:layout_height="0.5dp"
                 android:background="#ff272727"
                 android:contentDescription="@null" />
-
 
             <RelativeLayout
                 android:id="@+id/appstore_btn"
@@ -514,7 +515,8 @@
                         android:visibility="gone" />
                 </RelativeLayout>
                 
-            </RelativeLayout>			-->
+            </RelativeLayout>
+        -->
     </LinearLayout>
 
 </LinearLayout>

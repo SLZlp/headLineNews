@@ -186,16 +186,14 @@ public class DrawerView implements OnClickListener {
 
 		// 通知
 		case R.id.message_btn:
-			activity.startActivity(new Intent(activity,
-					NoticeActivity.class));
+			activity.startActivity(new Intent(activity, NoticeActivity.class));
 			activity.overridePendingTransition(R.anim.slide_in_right,
 					R.anim.slide_out_left);
 			break;
 
 		// 活动
 		case R.id.app_activity_btn:
-			activity.startActivity(new Intent(activity,
-					CampaignActivity.class));
+			activity.startActivity(new Intent(activity, CampaignActivity.class));
 			activity.overridePendingTransition(R.anim.slide_in_right,
 					R.anim.slide_out_left);
 			break;

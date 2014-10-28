@@ -16,17 +16,18 @@ import com.headlineNews.bean.CityEntity;
 import com.headlineNews.tools.Constants;
 import com.headlineNews.widget.HeadListView;
 
-
 /**
  * 城市列表的Activity
+ * 
  * @author Administrator
- *
+ * 
  */
 public class CityListActivity extends BaseActivity {
 	private TextView title;
 	private HeadListView mListView;
 	private ArrayList<CityEntity> cityList;
 	private CityAdapter mAdapter;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -34,12 +35,12 @@ public class CityListActivity extends BaseActivity {
 		initView();
 		initData();
 	}
-	
+
 	private void initView() {
 		title = (TextView) findViewById(R.id.title);
-		mListView = (HeadListView)findViewById(R.id.cityListView);
+		mListView = (HeadListView) findViewById(R.id.cityListView);
 	}
-	
+
 	private void initData() {
 		title.setText("当前城市-杭州");
 		cityList = Constants.getCityList();
@@ -54,8 +55,9 @@ public class CityListActivity extends BaseActivity {
 					int position, long id) {
 //				Intent intent = new Intent(getApplicationContext(), DetailsActivity.class);
 //				startActivity(intent);
-				overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+			
 			}
 		});
 	}
 }
+			

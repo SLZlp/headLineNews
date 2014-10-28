@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -28,7 +27,7 @@ import com.headlineNews.tools.Constants;
 import com.headlineNews.widget.HeadListView;
 
 public class NewsFragment extends Fragment{
-	private final static String TAG = "NewsFragment";
+//	private final static String TAG = "NewsFragment";
 	Activity activity;
 	ArrayList<News> newsList = new ArrayList<News>();
 	HeadListView mListView;
@@ -42,7 +41,6 @@ public class NewsFragment extends Fragment{
 	private TextView notify_view_text;
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
-		// TODO Auto-generated method stub
 		Bundle args = getArguments();
 		text = args != null ? args.getString("text") : "";
 		channel_id = args != null ? args.getInt("id", 0) : 0;
@@ -52,7 +50,6 @@ public class NewsFragment extends Fragment{
 
 	@Override
 	public void onAttach(Activity activity) {
-		// TODO Auto-generated method stub
 		this.activity = activity;
 		super.onAttach(activity);
 	}
@@ -67,11 +64,9 @@ public class NewsFragment extends Fragment{
 				new Thread(new Runnable() {
 					@Override
 					public void run() {
-						// TODO Auto-generated method stub
 						try {
 							Thread.sleep(2);
 						} catch (InterruptedException e) {
-							// TODO Auto-generated catch block
 							e.printStackTrace();
 						}
 						handler.obtainMessage(SET_NEWSLIST).sendToTarget();
@@ -87,7 +82,6 @@ public class NewsFragment extends Fragment{
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-		// TODO Auto-generated method stub
 		View view = LayoutInflater.from(getActivity()).inflate(R.layout.news_fragment, null);
 		mListView = (HeadListView) view.findViewById(R.id.mListView);
 		TextView item_textview = (TextView)view.findViewById(R.id.item_textview);
@@ -100,13 +94,13 @@ public class NewsFragment extends Fragment{
 	}
 
 	private void initData() {
+		
 		newsList = Constants.getNewsList();
 	}
 	
 	Handler handler = new Handler() {
 		@Override
 		public void handleMessage(Message msg) {
-			// TODO Auto-generated method stub
 			switch (msg.what) {
 			case SET_NEWSLIST:
 				detail_loading.setVisibility(View.GONE);
@@ -160,7 +154,6 @@ public class NewsFragment extends Fragment{
 
 			@Override
 			public void onClick(View v) {
-				// TODO Auto-generated method stub
 				Intent intent = new Intent(activity, CityListActivity.class);
 				startActivity(intent);
 			}
@@ -174,14 +167,12 @@ public class NewsFragment extends Fragment{
 			
 			@Override
 			public void run() {
-				// TODO Auto-generated method stub
 				notify_view_text.setText(String.format(getString(R.string.ss_pattern_update), 10));
 				notify_view.setVisibility(View.VISIBLE);
 				new Handler().postDelayed(new Runnable() {
 					
 					@Override
 					public void run() {
-						// TODO Auto-generated method stub
 						notify_view.setVisibility(View.GONE);
 					}
 				}, 2000);
@@ -191,9 +182,8 @@ public class NewsFragment extends Fragment{
 	/* 摧毁视图 */
 	@Override
 	public void onDestroyView() {
-		// TODO Auto-generated method stub
 		super.onDestroyView();
-		Log.d("onDestroyView", "channel_id = " + channel_id);
+//		Log.d("onDestroyView", "channel_id = " + channel_id);
 		mAdapter = null;
 	}
 	/* 摧毁该Fragment，一般是FragmentActivity 被摧毁的时候伴随着摧毁 */
@@ -201,6 +191,6 @@ public class NewsFragment extends Fragment{
 	public void onDestroy() {
 		// TODO Auto-generated method stub
 		super.onDestroy();
-		Log.d(TAG, "channel_id = " + channel_id);
+//		Log.d(TAG, "channel_id = " + channel_id);
 	}
 }

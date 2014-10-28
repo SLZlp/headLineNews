@@ -12,7 +12,11 @@ public class DataTools {
 	}
 
 	/**
+<<<<<<< HEAD
 	 *  px转dip
+=======
+	 *  px תΪ dip
+>>>>>>> refs/remotes/choose_remote_name/master
 	 */
 	public static int px2dip(Context context, float pxValue) {
 		final float scale = context.getResources().getDisplayMetrics().density;

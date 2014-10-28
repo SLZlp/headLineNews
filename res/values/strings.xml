@@ -75,5 +75,9 @@
     <string name="campaign">活动</string>
     <string name="Login_headline_today">登录今日头条</string>
     <string name="Input_phone_number">请输入手机号</string>
+    <string name="left_drawer_no_login_tip">登录后，将推荐给你更多感兴趣的文章</string>
+    <string name="setting_feedback">意见反馈</string>
+    <string name="setting_recommend">精彩应用推荐</string>
+    <string name="feed_appad_download">立即下载</string>
 
 </resources>

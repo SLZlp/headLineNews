@@ -88,10 +88,11 @@
             android:id="@+id/mViewPager"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
+
         <include
             android:id="@+id/mChannelManage"
             layout="@layout/layout_channel_manage"
-            android:visibility="invisible"/>
+            android:visibility="invisible" />
     </FrameLayout>
 
 </LinearLayout>

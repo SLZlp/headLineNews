@@ -21,7 +21,6 @@ import android.widget.LinearLayout.LayoutParams;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.headlineNews.R;
 import com.headlineNews.adapter.NewsFragmentPagerAdapter;
@@ -35,8 +34,8 @@ import com.headlineNews.widget.DrawerView;
 
 /**
  * 本应用的主体
- * @author jack
- *  FragmentActivity 是 android.support.v4.app.FragmentActivity包下面的
+ * 
+ * @author jack FragmentActivity 是 android.support.v4.app.FragmentActivity包下面的
  */
 public class MainActivity extends FragmentActivity {
 
@@ -78,9 +77,9 @@ public class MainActivity extends FragmentActivity {
 	/** 当前默认选择的频道 */
 	private int selectedChannel = 0;
 	/** 频道选项的 宽度 */
-	private int channelItemWidth = 60;
+	private int channelItemWidth = 70;
 
-	/**fragment 集合**/
+	/** fragment 集合 **/
 	private ArrayList<Fragment> fragments = new ArrayList<Fragment>();
 	/** 请求CODE */
 	public final static int CHANNELREQUEST = 1;
@@ -91,19 +90,17 @@ public class MainActivity extends FragmentActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
-		
-		//获取屏幕的宽度
+
+		// 获取屏幕的宽度
 		initBase();
-		//初始化视图
+		// 初始化视图
 		initView();
 		initSlidingMenu();
 
 		initListener();
-		
-		
+
 	}
-	
-	
+
 	/**
 	 * 得到屏幕宽度
 	 */
@@ -114,14 +111,12 @@ public class MainActivity extends FragmentActivity {
 		display.getMetrics(metrics);
 		mScreenWidth = metrics.widthPixels;
 	}
-	
-	
 
 	/**
 	 * 初始化视图
 	 */
 	private void initView() {
-		
+
 		head_progress = (ProgressBar) findViewById(R.id.head_progress);
 		head_refresh = (ImageView) findViewById(R.id.head_refresh);
 		head_munu = (ImageView) findViewById(R.id.head_munu);
@@ -137,16 +132,13 @@ public class MainActivity extends FragmentActivity {
 
 		setChangelView();
 	}
-	
-	
-	
+
 	/**
 	 * 初始化SlidingMenu
 	 */
 	private void initSlidingMenu() {
 		side_drawer = new DrawerView(this).initSlidingMenu();
 	}
-
 
 	/**
 	 * 监听事件
@@ -156,44 +148,43 @@ public class MainActivity extends FragmentActivity {
 
 			@Override
 			public void onClick(View v) {
-				
-				Intent intent_channel=new Intent(getApplicationContext(),ChannelManageActivity.class);
-				//启动activity，从应用界面跳转到频道界面
+
+				Intent intent_channel = new Intent(getApplicationContext(),
+						ChannelManageActivity.class);
+				// 启动activity，从应用界面跳转到频道界面
 				startActivity(intent_channel);
-				//这里是，当activity进行跳转的时候，中间用动画效果去实现，从右边到左边
-				overridePendingTransition(R.anim.slide_in_right, R.anim.slide_in_left);
+				// 这里是，当activity进行跳转的时候，中间用动画效果去实现，从右边到左边
+				overridePendingTransition(R.anim.slide_in_right,
+						R.anim.slide_in_left);
 
 			}
 		});
-		
+
 		head_munu.setOnClickListener(new OnClickListener() {
-			
+
 			@Override
 			public void onClick(View v) {
-				//System.out.println(side_drawer+"  ****  "+side_drawer.isMenuShowing());
-				//side_drawer是滑动菜单，当点击 head_munu 这个按钮
-				//的时候就滑动到  SettingsActivity   设置界面
-				if(side_drawer.isMenuShowing()){
+				// System.out.println(side_drawer+"  ****  "+side_drawer.isMenuShowing());
+				// side_drawer是滑动菜单，当点击 head_munu 这个按钮
+				// 的时候就滑动到 SettingsActivity 设置界面
+				if (side_drawer.isMenuShowing()) {
 					side_drawer.showContent();
-					
-				}else{
+
+				} else {
 					side_drawer.showMenu();
 				}
-				
-				//side_drawer.toggle();//这个方法会自动判断你的菜单是要打开还是关闭
+
+				// side_drawer.toggle();//这个方法会自动判断你的菜单是要打开还是关闭
 			}
 		});
-		
+
 		setChangelView();
 	}
 
-	
 	/**
 	 * activity返回的结果码，
 	 * 
-	 * 如果等于请求码，
-	 * 就调用“setChangelView()当栏目项发生改变的时候调用”这个方法
-	 * requestCode  请求
+	 * 如果等于请求码， 就调用“setChangelView()当栏目项发生改变的时候调用”这个方法 requestCode 请求
 	 */
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -206,7 +197,6 @@ public class MainActivity extends FragmentActivity {
 			break;
 		}
 	}
-	
 
 	/**
 	 * 当栏目项发生变化时候调用
@@ -223,28 +213,21 @@ public class MainActivity extends FragmentActivity {
 				AppApplication.getApp().getSQLHelper()).getUserChannel());
 	}
 
-	
 	/**
 	 * 初始化Column栏目项
 	 * */
 	private void initTabColumn() {
-		//移除线性布局中所有试图
+		// 移除线性布局中所有试图
 		mRadioGroup_content.removeAllViews();
 		int count = userChannelList.size();
-		mColumnHorizontalScrollView.setParam(this, mScreenWidth,
-				mRadioGroup_content, shade_left, shade_right, ll_more_columns,
-				rl_column);
 		for (int i = 0; i < count; i++) {
 			LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
 					channelItemWidth, LayoutParams.WRAP_CONTENT);
 			params.leftMargin = 5;
 			params.rightMargin = 5;
-			// TextView localTextView = (TextView)
-			// mInflater.inflate(R.layout.column_radio_item, null);
 			TextView columnTextView = new TextView(this);
 			columnTextView.setTextAppearance(this,
 					R.style.top_category_scroll_view_item_text);
-			// localTextView.setBackground(getResources().getDrawable(R.drawable.top_category_scroll_text_view_bg));
 			columnTextView.setBackgroundResource(R.drawable.radio_buttong_bg);
 			columnTextView.setGravity(Gravity.CENTER);
 			columnTextView.setPadding(5, 5, 5, 5);
@@ -255,6 +238,8 @@ public class MainActivity extends FragmentActivity {
 			if (selectedChannel == i) {
 				columnTextView.setSelected(true);
 			}
+			mRadioGroup_content.addView(columnTextView, i, params);
+			// 点击频道
 			columnTextView.setOnClickListener(new OnClickListener() {
 
 				@Override
@@ -268,14 +253,9 @@ public class MainActivity extends FragmentActivity {
 							mViewPager.setCurrentItem(i);
 						}
 					}
-					
-					//这个其实就是你滑动一下弹的这个弹土司
-					Toast.makeText(getApplicationContext(),
-							userChannelList.get(v.getId()).CName,
-							Toast.LENGTH_SHORT).show();
+
 				}
 			});
-			mRadioGroup_content.addView(columnTextView, i, params);
 		}
 	}
 
@@ -300,7 +280,6 @@ public class MainActivity extends FragmentActivity {
 		mViewPager.setOnPageChangeListener(pageListener);
 	}
 
-	
 	/**
 	 * 选择的Column里面的Tab
 	 * */

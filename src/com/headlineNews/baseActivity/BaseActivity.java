@@ -43,7 +43,8 @@ public class BaseActivity extends Activity {
 	/**
 	 * 初始化监听
 	 */
-	private void initListener() {
+
+	protected void initListener() {
 
 		// 初始化手势监听
 		if (mGestureDetector == null) {
