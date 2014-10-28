@@ -43,7 +43,7 @@
                 android:layout_height="40.0dip"
                 android:layout_alignParentLeft="true"
                 android:layout_centerVertical="true"
-                android:background="@drawable/ic_category_left_edge"
+                android:background="@drawable/channel_leftblock"
                 android:contentDescription="@null"
                 android:visibility="visible" />
 
@@ -53,27 +53,24 @@
                 android:layout_height="40.0dip"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
-                android:background="@drawable/ic_category_right_edge"
+                android:background="@drawable/channel_rightblock"
                 android:contentDescription="@null"
                 android:visibility="visible" />
         </RelativeLayout>
 
-        <RelativeLayout
+        <LinearLayout
             android:id="@+id/ll_more_columns"
-            android:layout_width="40dip"
-            android:layout_height="40.0dip"
-            android:gravity="center" >
+            android:layout_width="wrap_content"
+            android:layout_height="40.0dip" >
 
             <ImageView
                 android:id="@+id/button_more_columns"
-                android:layout_width="@dimen/top_category_height"
-                android:layout_height="@dimen/top_category_height"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
+                android:layout_width="40.0dip"
+                android:layout_height="40.0dip"
+                android:layout_gravity="center_vertical"
                 android:contentDescription="@null"
-                android:scaleType="center"
-                android:src="@drawable/ic_category_expand" />
-        </RelativeLayout>
+                android:src="@drawable/channel_glide_day_bg" />
+        </LinearLayout>
     </LinearLayout>
 
     <View
@@ -92,10 +89,10 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
-        <!-- <include -->
-        <!-- android:id="@+id/mChannelManage" -->
-        <!-- layout="@layout/layout_channel_manage" -->
-        <!-- android:visibility="gone" /> -->
+        <include
+            android:id="@+id/mChannelManage"
+            layout="@layout/layout_channel_manage"
+            android:visibility="invisible" />
     </FrameLayout>
-    
+
 </LinearLayout>

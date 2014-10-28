@@ -43,6 +43,7 @@ public class BaseActivity extends Activity {
 	/**
 	 * 初始化监听
 	 */
+
 	protected void initListener() {
 
 		// 初始化手势监听

@@ -20,7 +20,6 @@ import android.widget.LinearLayout;
 import android.widget.LinearLayout.LayoutParams;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
-import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.headlineNews.R;
@@ -62,11 +61,9 @@ public class MainActivity extends FragmentActivity {
 	/** 导航右边的阴影（图片） */
 	private ImageView shade_right;
 	/** 右端更多选项（线性布局） */
-	RelativeLayout ll_more_columns;
+	LinearLayout ll_more_columns;
 	/** 更多频道（图片按钮） */
 	private ImageView button_more_columns;
-	/** 频道管理布局 */
-	private ScrollView mChannelManage;
 	/** 显示新闻的页面（ViewPager） */
 	private ViewPager mViewPager;
 
@@ -104,43 +101,15 @@ public class MainActivity extends FragmentActivity {
 
 	}
 
-	private void initListener() {
-		button_more_columns.setOnClickListener(new OnClickListener() {
-
-			@Override
-			public void onClick(View v) {
-				// RotateAnimation categoryOpenManageAnimation =
-				// (RotateAnimation) AnimationUtils.loadAnimation(mContext,
-				// R.anim.open_manage_channel);
-				// button_more_columns.setAnimation(categoryOpenManageAnimation);
-
-				Intent intent_channel = new Intent(getApplicationContext(),
-						ChannelActivity.class);
-				startActivityForResult(intent_channel, CHANNELREQUEST);
-				overridePendingTransition(R.anim.slide_in_right,
-						R.anim.slide_out_left);
-
-			}
-		});
-	}
-
-	@Override
-	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-		super.onActivityResult(requestCode, resultCode, data);
-		switch (requestCode) {
-		case CHANNELREQUEST:
-			if (resultCode == CHANNELRESULT) {
-				setChangelView();
-			}
-			break;
-		}
-	}
-
 	/**
-	 * 初始化SlidingMenu
+	 * 得到屏幕宽度
 	 */
-	private void initSlidingMenu() {
-		side_drawer = new DrawerView(this).initSlidingMenu();
+	private void initBase() {
+		mContext = this;
+		Display display = getWindowManager().getDefaultDisplay();
+		DisplayMetrics metrics = new DisplayMetrics();
+		display.getMetrics(metrics);
+		mScreenWidth = metrics.widthPixels;
 	}
 
 	/**
@@ -157,12 +126,76 @@ public class MainActivity extends FragmentActivity {
 		mRadioGroup_content = (LinearLayout) findViewById(R.id.mRadioGroup_content);
 		shade_left = (ImageView) findViewById(R.id.shade_left);
 		shade_right = (ImageView) findViewById(R.id.shade_right);
-		ll_more_columns = (RelativeLayout) findViewById(R.id.ll_more_columns);
+		ll_more_columns = (LinearLayout) findViewById(R.id.ll_more_columns);
 		button_more_columns = (ImageView) findViewById(R.id.button_more_columns);
-		// mChannelManage = (ScrollView) findViewById(R.id.mChannelManage);
 		mViewPager = (ViewPager) findViewById(R.id.mViewPager);
 
 		setChangelView();
+	}
+
+	/**
+	 * 初始化SlidingMenu
+	 */
+	private void initSlidingMenu() {
+		side_drawer = new DrawerView(this).initSlidingMenu();
+	}
+
+	/**
+	 * 监听事件
+	 */
+	private void initListener() {
+		button_more_columns.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+
+				Intent intent_channel = new Intent(getApplicationContext(),
+						ChannelManageActivity.class);
+				// 启动activity，从应用界面跳转到频道界面
+				startActivity(intent_channel);
+				// 这里是，当activity进行跳转的时候，中间用动画效果去实现，从右边到左边
+				overridePendingTransition(R.anim.slide_in_right,
+						R.anim.slide_in_left);
+
+			}
+		});
+
+		head_munu.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				// System.out.println(side_drawer+"  ****  "+side_drawer.isMenuShowing());
+				// side_drawer是滑动菜单，当点击 head_munu 这个按钮
+				// 的时候就滑动到 SettingsActivity 设置界面
+				if (side_drawer.isMenuShowing()) {
+					side_drawer.showContent();
+
+				} else {
+					side_drawer.showMenu();
+				}
+
+				// side_drawer.toggle();//这个方法会自动判断你的菜单是要打开还是关闭
+			}
+		});
+
+		setChangelView();
+	}
+
+	/**
+	 * activity返回的结果码，
+	 * 
+	 * 如果等于请求码， 就调用“setChangelView()当栏目项发生改变的时候调用”这个方法 requestCode 请求
+	 */
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		super.onActivityResult(requestCode, resultCode, data);
+		switch (requestCode) {
+		case CHANNELREQUEST:
+			if (resultCode == CHANNELRESULT) {
+
+			}
+			break;
+		}
 	}
 
 	/**
@@ -245,17 +278,6 @@ public class MainActivity extends FragmentActivity {
 		// mViewPager.setOffscreenPageLimit(0);
 		mViewPager.setAdapter(mAdapetr);
 		mViewPager.setOnPageChangeListener(pageListener);
-	}
-
-	/**
-	 * 得到屏幕宽度
-	 */
-	private void initBase() {
-		mContext = this;
-		Display display = getWindowManager().getDefaultDisplay();
-		DisplayMetrics metrics = new DisplayMetrics();
-		display.getMetrics(metrics);
-		mScreenWidth = metrics.widthPixels;
 	}
 
 	/**
