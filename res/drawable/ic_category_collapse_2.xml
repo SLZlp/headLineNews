@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rotate xmlns:android="http://schemas.android.com/apk/res/android" 
+    android:drawable="@drawable/ic_category_expand_pressed"
+    android:fromDegrees="-90.0"
+    android:toDegrees="-90.0"
+    android:visible="true"/>
