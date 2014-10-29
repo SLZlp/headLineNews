@@ -4,7 +4,7 @@ import android.content.Context;
 
 public class DataTools {
 	/**
-	 * dipתΪ px
+	 * dip转 px
 	 */
 	public static int dip2px(Context context, float dipValue) {
 		final float scale = context.getResources().getDisplayMetrics().density;
@@ -12,11 +12,7 @@ public class DataTools {
 	}
 
 	/**
-<<<<<<< HEAD
-	 *  px转dip
-=======
-	 *  px תΪ dip
->>>>>>> refs/remotes/choose_remote_name/master
+	 *  px转 dip
 	 */
 	public static int px2dip(Context context, float pxValue) {
 		final float scale = context.getResources().getDisplayMetrics().density;

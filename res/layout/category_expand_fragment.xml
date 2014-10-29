@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <include
+        android:id="@+id/title_bar"
+        layout="@layout/title_bar" />
+
+    <RelativeLayout
+        android:id="@+id/my_category_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/top_category_height"
+        android:background="@drawable/bg_category_bar"
+        android:gravity="center_vertical"
+        android:paddingLeft="12.0dip"
+        android:paddingRight="12.0dip" >
+
+        <TextView
+            android:id="@+id/my_category_text"
+            style="@style/subscribe_my_tip_text"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:text="@string/subscribe_my_category" />
+
+        <TextView
+            android:id="@+id/my_category_hint"
+            style="@style/subscribe_my_small_tip_text"
+            android:layout_alignBaseline="@+id/my_category_text"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10.0dip"
+            android:layout_toRightOf="@+id/my_category_text"
+            android:text="@string/subscribe_manager_category_info_2"
+            android:textColor="@color/category_hint_text" />
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/scroll_frame"
+        android:layout_width="fill_parent"
+        android:layout_height="0.0dip"
+        android:layout_weight="1.0"
+        android:background="@drawable/bg_category_overlay" >
+
+        <ScrollView
+            android:id="@+id/scroll_view"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@drawable/subscribe_bg"
+            android:scrollbars="none" >
+
+            <LinearLayout
+                android:id="@+id/subscribe_main_layout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="14.0dip"
+                android:paddingTop="14.0dip" >
+
+                <com.headlineNews.widget.DragGrid
+                    android:id="@+id/userGridView"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="14dip"
+                    android:layout_marginRight="14dip"
+                    android:gravity="center"
+                    android:horizontalSpacing="14dip"
+                    android:listSelector="@android:color/transparent"
+                    android:numColumns="4"
+                    android:scrollbars="vertical"
+                    android:stretchMode="columnWidth"
+                    android:verticalSpacing="14.0px" />
+
+                <TextView
+                    android:id="@+id/more_category_text"
+                    style="@style/subscribe_more_tip_text"
+                    android:layout_width="fill_parent"
+                    android:layout_height="@dimen/top_category_height"
+                    android:layout_marginBottom="14.0dip"
+                    android:layout_marginTop="14.0dip"
+                    android:background="@drawable/bg_category_more_bar"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="12.0dip"
+                    android:text="@string/subscribe_more_category" />
+
+                <com.headlineNews.widget.OtherGridView
+                    android:id="@+id/otherGridView"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="14dip"
+                    android:layout_marginRight="14dip"
+                    android:gravity="center"
+                    android:horizontalSpacing="14dip"
+                    android:listSelector="@android:color/transparent"
+                    android:numColumns="4"
+                    android:scrollbars="vertical"
+                    android:stretchMode="columnWidth"
+                    android:verticalSpacing="14.0px" />
+            </LinearLayout>
+        </ScrollView>
+
+        <include
+            android:id="@+id/category_layout"
+            layout="@layout/channel_item"
+            android:visibility="gone" />
+    </FrameLayout>
+
+</LinearLayout>

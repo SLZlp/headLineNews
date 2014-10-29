@@ -174,7 +174,6 @@
         <item name="android:layout_marginLeft">0.0dip</item>
         <item name="android:layout_marginRight">0.0dip</item>
         <item name="android:minHeight">44.0dip</item>
-        <item name="android:text">@null</item>
         <item name="android:clickable">true</item>
         <item name="android:drawableLeft">@drawable/btn_back</item>
         <item name="android:drawablePadding">0.0dip</item>

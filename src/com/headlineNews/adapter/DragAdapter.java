@@ -92,7 +92,6 @@ public class DragAdapter extends BaseAdapter{
 	public void dragSortChannel(int dragPostion, int dropPostion) {
 		holdPosition = dropPostion;
 		Channel dragItem = getItem(dragPostion);
-//		Log.d(TAG, "startPostion=" + dragPostion + ";endPosition=" + dropPostion);
 		if (dragPostion < dropPostion) {
 			channelList.add(dropPostion + 1, dragItem);
 			channelList.remove(dragPostion);

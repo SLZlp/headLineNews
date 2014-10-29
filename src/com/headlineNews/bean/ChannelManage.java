@@ -83,7 +83,7 @@ public class ChannelManage {
 	 * @return 数据库存在用户配置 ? 数据库内的用户选择频道 : 默认用户选择频道 ;
 	 */
 	@SuppressWarnings("unchecked")
-	public List<Channel> getUserChannel() {
+	public List<Channel> getUserChannel() { 
 		Object cacheList = channelDao.listCache(SQLHelper.SELECTED + "= ?",new String[] { "1" });
 		if (cacheList != null && !((List<Map<String, String>>) cacheList).isEmpty()) {
 			userExist = true;
