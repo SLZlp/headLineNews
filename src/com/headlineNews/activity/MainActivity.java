@@ -20,8 +20,9 @@ import android.widget.LinearLayout;
 import android.widget.LinearLayout.LayoutParams;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
-import android.widget.ScrollView;
+
 import android.widget.TextView;
+import android.widget.ScrollView;
 
 import com.headlineNews.R;
 import com.headlineNews.adapter.NewsFragmentPagerAdapter;
@@ -35,8 +36,8 @@ import com.headlineNews.widget.DrawerView;
 
 /**
  * 本应用的主体
- * 
- * @author jack FragmentActivity 是 android.support.v4.app.FragmentActivity包下面的
+ * @author jack
+ *  FragmentActivity 是 android.support.v4.app.FragmentActivity包下面的
  */
 public class MainActivity extends FragmentActivity {
 
