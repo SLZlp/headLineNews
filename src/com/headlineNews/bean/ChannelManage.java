@@ -35,6 +35,8 @@ public class ChannelManage {
 		defaultUserChannels.add(new Channel(5, "科技", 5, 1));
 		defaultUserChannels.add(new Channel(6, "体育", 6, 1));
 		defaultUserChannels.add(new Channel(7, "军事", 7, 1));
+		defaultUserChannels.add(new Channel(19, "娱乐", 8, 1));
+		defaultUserChannels.add(new Channel(20, "家居", 9, 1));
 		defaultOtherChannels.add(new Channel(8, "财经", 1, 0));
 		defaultOtherChannels.add(new Channel(9, "汽车", 2, 0));
 		defaultOtherChannels.add(new Channel(10, "房产", 3, 0));
@@ -46,7 +48,9 @@ public class ChannelManage {
 		defaultOtherChannels.add(new Channel(16, "美女", 9, 0));
 		defaultOtherChannels.add(new Channel(17, "游戏", 10, 0));
 		defaultOtherChannels.add(new Channel(18, "数码", 11, 0));
-		defaultUserChannels.add(new Channel(19, "娱乐", 12, 0));
+		defaultOtherChannels.add(new Channel(19, "文化", 12, 0));
+		defaultOtherChannels.add(new Channel(20, "故事", 13, 0));
+		defaultOtherChannels.add(new Channel(21, "电影", 14, 0));
 	}
 
 	/**
