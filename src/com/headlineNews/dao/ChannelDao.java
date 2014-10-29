@@ -13,9 +13,14 @@ import android.database.sqlite.SQLiteDatabase;
 import com.headlineNews.bean.Channel;
 import com.headlineNews.db.SQLHelper;
 
-/**
- * 通过dao 对数据库中的TABLE_CHANNEL = "channel"数据库表 进行具体的操作
- */
+
+ /**
+  * 通过道  对数据库中的TABLE_CHANNEL = "channel"数据库表 进行具体的操作
+  * @author susan
+  *
+  */
+
+
 public class ChannelDao implements IChannelDao {
 	private SQLHelper helper = null;
 

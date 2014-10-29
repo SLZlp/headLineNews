@@ -1,132 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <string name="app_name">今日头条</string>
-    <string name="left_drawer_no_login_tip">登录后，将推荐给你更多感兴趣的文章</string>
+    <string name="action_settings">Settings</string>
+    <string name="drawer_btn_rss">频道管理</string>
+    <string name="setting_list_mode">列表显示摘要</string>
+    <string name="setting_font_size">字体大小</string>
+    <string name="setting_list_comment">列表页评论</string>
+    <string name="setting_refresh_list">列表页刷新</string>
+    <string name="setting_load_image">2G/3G网络流量</string>
+    <string name="setting_clear">清理缓存</string>
+    <string name="setting_notify">推送通知</string>
+    <string name="setting_interactive">互动插件</string>
+    <string name="setting_around_page">左右翻页</string>
+    <string name="setting_share_when_favor">收藏时转发</string>
+    <string name="setting_share_when_diggbury">顶踩时转发</string>
+    <string name="setting_update">检查新版本</string>
+    <string name="setting_use_help">使用帮助</string>
+    <string name="app_copyright">© 头条网 toutiao.com</string>
+    <string name="More_login">更多登录方式</string>
     <string name="left_drawer_item_search">搜索</string>
     <string name="left_drawer_item_favorite">收藏</string>
-    <string name="left_drawer_item_message">消息</string>
+    <string name="left_drawer_item_message">通知</string>
     <string name="left_drawer_item_offline">离线</string>
-    <string name="left_drawer_item_offline_cancel">取消离线</string>
     <string name="left_drawer_item_activity">活动</string>
     <string name="left_drawer_item_setting">设置</string>
     <string name="left_drawer_item_feedback">反馈</string>
-    <string name="left_drawer_item_appstore">精彩应用</string>
+    <string name="left_drawer_item_appstore">应用推荐</string>
+    <string name="left_drawer_item_special_offer">今日特卖</string>
+    <string name="left_drawer_item_the_first_prize">今日头彩</string>
+    <string name="title_activity_settings">设置页面</string>
+    <string name="title_activity_base">BaseActivity</string>
+    <string name="app_name">今日头条</string>
+    <string name="left_drawer_item_offline_cancel">取消离线</string>
     <string name="drawer_right_logout_hint_text">"登录后 可关注好友评论和收藏"</string>
     <string name="drawer_right_tip_no_login">未登录</string>
     <string name="ss_pattern_update">发现%1$d条更新</string>
     <string name="ss_have_a_rest">暂无更新, 休息一会儿</string>
     <string name="action_night_mode">夜间模式</string>
     <string name="action_day_mode">日间模式</string>
-    <string name="setting_list_mode">列表显示摘要</string>
-    <string name="setting_font_size">字体大小</string>
-    <string name="setting_list_comment">列表页评论</string>
-    <string name="setting_refresh_list">列表页刷新</string>
-    <string name="setting_load_image">2G/3G网络流量</string>
-    <string name="setting_notify">推送通知</string>
-    <string name="setting_interactive">互动插件</string>
-    <string name="setting_share_when_favor">收藏时转发</string>
-    <string name="setting_share_when_diggbury">顶踩时转发</string>
-    <string name="setting_clear">清理缓存</string>
-    <string name="setting_feedback">意见反馈</string>
-    <string name="setting_recommend">精彩应用推荐</string>
-    <string name="setting_update">检查新版本</string>
     <string name="setting_night_mode">夜间模式</string>
     <string name="setting_use_swipe">左右翻页</string>
     <string name="setting_switch_domain">启动网络调试</string>
     <string name="setting_close_shake_hand">关闭摇一摇切换夜间模式</string>
-    <string name="setting_use_help">使用帮助</string>
-    <string name="app_copyright">© 头条网 toutiao.com</string>
     <string name="favorite_btn_delete">删除</string>
     <string name="favorite_btn_edit">编辑</string>
     <string name="favorite_btn_cancel">取消</string>
     <string name="dislike_dlg_lable_speech">读文章</string>
-    <string name="drawer_btn_rss">频道管理</string>
     <string name="subscribe_my_category">我的频道</string>
-    <string name="subscribe_more_category">更多频道</string>
+    <string name="subscribe_more_category">点击添加频道</string>
     <string name="subscribe_manager_category_info">单击增删频道</string>
     <string name="subscribe_manager_category_info_2">单击增删频道，长按拖拽排序</string>
     <string name="label_cancel_dislike">撤消</string>
@@ -134,14 +55,29 @@
     <string name="day_yesterday">昨天</string>
     <string name="day_before">前天</string>
     <string name="search_count_fmt">发现%1$s篇文章</string>
+    <string name="pattern_update">发现%1$d条更新</string>
     <string name="city_category_list_header">点击选择其他城市</string>
     <string name="city_category_list_hint">选择城市，立即查看本地新闻</string>
     <string name="city_category_list_notify_no_city">请先选择您关注的城市</string>
-    
-    <string name="edit_order">排序</string>
-    <string name="action_settings">Settings</string>
-    <string name="appad_v18_hot">Hot</string>
+    <string name="retry_large_image">暂无收藏</string>
+    <string name="font_size">字体大小</string>
+    <string name="small">小</string>
+    <string name="ln">中</string>
+    <string name="big">大</string>
+    <string name="large">特大</string>
+    <string name="cancel">取消</string>
+    <string name="hint_serach">"请输入搜索关键字…"</string>
+    <string name="text_Cancel">取消</string>
+    <string name="title_activity_collection">CollectionActivity</string>
+    <string name="My_collection">我的收藏</string>
+    <string name="text_Edit">编辑</string>
+    <string name="title_activity_notice">NoticeActivity</string>
+    <string name="campaign">活动</string>
+    <string name="Login_headline_today">登录今日头条</string>
+    <string name="Input_phone_number">请输入手机号</string>
+    <string name="left_drawer_no_login_tip">登录后，将推荐给你更多感兴趣的文章</string>
+    <string name="setting_feedback">意见反馈</string>
+    <string name="setting_recommend">精彩应用推荐</string>
     <string name="feed_appad_download">立即下载</string>
-    <string name="retry_large_image">重新加载</string>
 
 </resources>

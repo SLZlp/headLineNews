@@ -3,7 +3,7 @@
 
     <translate
         android:duration="@integer/config_slideAnimTime"
-        android:fromXDelta="100.0%p"
+        android:fromXDelta="100.0%"
         android:toXDelta="0.0" />
 
 </set>
